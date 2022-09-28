@@ -1,0 +1,65 @@
+<%- include('partials/header') -%>
+<section class="main">
+  <div class="container-lg my-5">
+    <div class="container-fluid">
+      <h2 class="display-6 text-center text-danger fw-bold fst-italic">
+        About the site
+      </h2>
+      <div class="container text-center">
+        <div class="row">
+          
+          <div class="col-sm-8">
+            <h2>Feed</h2>
+            <div class="col">
+              <div class="col-4">
+               <!-- looping trought the post collection from DB -->
+               <% for(post of feed) {%>
+                <ul>
+                <li class="justify-content-between mt-5">
+                  <!-- creating an anchor tag, grabing the unique id of the post and create a path with that unique id -->
+                  <a href="/feed/<%=post._id%>">
+                    <img class="img-fluid" src="<%=post.image%>">
+                   
+                </li>
+              </ul>
+             
+              <!-- end of div with photo -->
+            </div>
+            
+            <div class="col-4">
+              <ul>
+                <li class="justify-content-between mt-5"> 
+                 Name: <%=post.name%> 
+                </li>
+                <li class="justify-content-between mt-5"> 
+                 Type: <%=post.type%> 
+                </li>
+                <li class="justify-content-between mt-5"> 
+                 Age: <%=post.age%> 
+                </li>
+                <li class="justify-content-between mt-5"> 
+                 Description: <%=post.description%> 
+                </li>
+              </ul>
+
+              <% } %>
+              <!-- end of div info -->
+            </div>
+          </a>
+              <!-- end of div post -->
+            </div>
+             
+        <!-- end of feed col -->
+          </div>
+          <div class="col-sm-4"> 
+            <h2>Filter</h2>
+            2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, dolorum beatae molestias iure iusto distinctio repellendus aliquid maiores, alias debitis, minus repudiandae nesciunt itaque reiciendis cumque quia dolore culpa eum.
+            <!-- end of div filter -->
+          </div>
+        </div>
+    </div>
+      <button><a href="/account/createPost">Create Post</button>
+  </div>
+</section>
+
+<%- include('partials/footer') -%>

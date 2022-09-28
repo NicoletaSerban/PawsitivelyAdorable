@@ -1,5 +1,9 @@
+const Animal = require("../models/Animal");
+
 module.exports = {
-  getIndex: (req, res) => {
-    res.render("main.ejs");
+  getMain: async (req, res) => {
+    const feed = await Animal.find().sort({ postDate: "desc" }).lean();
+
+    res.render("home.ejs", { feed: feed });
   },
 };
