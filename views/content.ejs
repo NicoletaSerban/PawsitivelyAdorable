@@ -1,0 +1,61 @@
+<div class="container-lg my-5">
+    <div class="container-fluid">
+      <h2 class="display-6 text-center text-danger fw-bold fst-italic">
+        About the site
+      </h2>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-sm-8">
+              <h2>Feed</h2>
+
+              
+                <div class="row">
+                <div class="col-sm-4">
+                 <!-- looping trought the post collection from DB -->
+                 
+                  
+                    <p class="mt-5">
+                      <!-- creating an anchor tag, grabing the unique id of the post and create a path with that unique id -->
+                      <a href="/feed/<%=post._id%>" class="text-decoration-none"> </a>  
+                        <img class="img-fluid rounded float-start" src="<%=post.image%>">
+                      
+                    </p>
+                  
+                  <!-- end of div with photo -->
+                </div>
+
+                <div class="col-sm-4">
+                  
+                    <p class="justify-content-between mt-5"> 
+                     Name: <%=post.name%> 
+                    </p>
+                    <p class="justify-content-between mt-5"> 
+                     Type: <%=post.type%> 
+                    </p>
+                    <p class="justify-content-between mt-5"> 
+                     Age: <%=post.age%> 
+                    </p>
+                    <p class="justify-content-between mt-5"> 
+                     Description: <%=post.description%> 
+                    </p>
+                  
+                </div>
+                <% } %>
+                  <!-- end of div info -->
+        
+                    
+              <!-- end of div post -->
+            </div>
+          
+        <!-- end of feed col -->
+          </div>
+
+          <div class="col-sm-4"> 
+            <h2>Filter</h2>
+            
+            <!-- end of div filter -->
+          </div>
+      </div>
+    </div>
+      <button><a href="/account/createPost" class="text-decoration-none">Create Post</button>
+  </div>

@@ -26,7 +26,7 @@ const AnimalSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  dislike: {
+  dislikes: {
     type: String,
     required: true,
   },

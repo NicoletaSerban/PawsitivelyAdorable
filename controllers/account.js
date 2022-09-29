@@ -5,8 +5,6 @@ const User = require("../models/User");
 module.exports = {
   getPost: async (req, res) => {
     try {
-      // finding all the post with the associed id
-
       // rendering profile page with the data from the DB
       res.render("account.ejs");
     } catch (err) {
@@ -29,11 +27,11 @@ module.exports = {
         specialNeeds: req.body.specialNeeds,
         forAdoption: req.body.forAdoption,
         forFoster: req.body.forFoster,
-        image: result.secure.url,
-        user: req.user.id,
+        cloudinaryId: result.public_id,
+        image: `https://res.cloudinary.com/happy18/image/upload/ar_1:1,c_fill,g_auto,w_1000/v1664364719/${result.public_id}.jpg`,
       });
       console.log("Post has been added!");
-      res.render("account.ejs");
+      res.redirect("/");
     } catch (err) {
       console.log(err);
     }

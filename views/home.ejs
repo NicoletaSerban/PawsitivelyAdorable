@@ -1,65 +1,142 @@
 <%- include('partials/header') -%>
-<section class="main">
-  <div class="container-lg my-5">
-    <div class="container-fluid">
-      <h2 class="display-6 text-center text-danger fw-bold fst-italic">
-        About the site
-      </h2>
-      <div class="container text-center">
-        <div class="row">
-          
-          <div class="col-sm-8">
-            <h2>Feed</h2>
-            <div class="col">
-              <div class="col-4">
-               <!-- looping trought the post collection from DB -->
-               <% for(post of feed) {%>
-                <ul>
-                <li class="justify-content-between mt-5">
-                  <!-- creating an anchor tag, grabing the unique id of the post and create a path with that unique id -->
-                  <a href="/feed/<%=post._id%>">
-                    <img class="img-fluid" src="<%=post.image%>">
-                   
-                </li>
-              </ul>
-             
-              <!-- end of div with photo -->
-            </div>
-            
-            <div class="col-4">
-              <ul>
-                <li class="justify-content-between mt-5"> 
-                 Name: <%=post.name%> 
-                </li>
-                <li class="justify-content-between mt-5"> 
-                 Type: <%=post.type%> 
-                </li>
-                <li class="justify-content-between mt-5"> 
-                 Age: <%=post.age%> 
-                </li>
-                <li class="justify-content-between mt-5"> 
-                 Description: <%=post.description%> 
-                </li>
-              </ul>
 
-              <% } %>
-              <!-- end of div info -->
-            </div>
-          </a>
-              <!-- end of div post -->
-            </div>
-             
-        <!-- end of feed col -->
+<div class="container">
+  <div class="py-5 text center container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <h1 class="fw-light text-center">About site</h1>
+        <p class="lead text-muted">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eligendi
+          eum natus suscipit magni nam. Eligendi minus ipsa illo, labore modi,
+          quas suscipit adipisci tenetur ab, numquam eveniet exercitationem
+          fugit.
+        </p>
+
+        <!-- Filter start -->
+        <h3 class="text-center">Filter</h3>
+        <div class="btn-group" role="group" aria-label="button group">
+          <div class="btn-group sm-text" role="group">
+            <button
+              type="button"
+              class="btn btn-primary btn-sm dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Type
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Dog</a></li>
+              <li><a class="dropdown-item" href="#">Cat</a></li>
+              <li><a class="dropdown-item" href="#">Cow</a></li>
+              <li><a class="dropdown-item" href="#">Horse</a></li>
+              <li><a class="dropdown-item" href="#">Goat</a></li>
+              <li><a class="dropdown-item" href="#">Pig</a></li>
+              <li><a class="dropdown-item" href="#">Others</a></li>
+            </ul>
           </div>
-          <div class="col-sm-4"> 
-            <h2>Filter</h2>
-            2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, dolorum beatae molestias iure iusto distinctio repellendus aliquid maiores, alias debitis, minus repudiandae nesciunt itaque reiciendis cumque quia dolore culpa eum.
-            <!-- end of div filter -->
+          <div class="btn-group" role="group">
+            <button
+              type="button"
+              class="btn btn-primary dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Age
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#"> < 1 year</a></li>
+              <li><a class="dropdown-item" href="#">1-5 years</a></li>
+              <li><a class="dropdown-item" href="#">5-10 years</a></li>
+              <li><a class="dropdown-item" href="#">10-15 years</a></li>
+              <li><a class="dropdown-item" href="#"> >15 years</a></li>
+            </ul>
           </div>
+          <button type="button" class="btn btn-primary">For Adoption</button>
+          <button type="button" class="btn btn-primary">For Foster</button>
+          <div class="btn-group" role="group">
+            <button
+              type="button"
+              class="btn btn-primary dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              By User
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">User 1</a></li>
+              <li><a class="dropdown-item" href="#">User 2</a></li>
+            </ul>
+          </div>
+          <div class="btn-group" role="group">
+            <button
+              type="button"
+              class="btn btn-primary dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Location
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Location 1</a></li>
+              <li><a class="dropdown-item" href="#">Location 2</a></li>
+            </ul>
+          </div>
+          <!-- End of filter -->
         </div>
+        <!-- end of col -->
+      </div>
+      <!-- end of row -->
     </div>
-      <button><a href="/account/createPost">Create Post</button>
+    <!-- end of about -->
   </div>
-</section>
+
+  <!-- post start -->
+  <div class="post py-5 bg-light">
+    <div class="container">
+      
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <% for(post of feed) {%>
+          <a href="/feed/<%=post._id%>" class="text-decoration-none"> 
+        <div class="col">
+          
+          <div class="card shadow-sm">
+              
+              <img src="<%=post.image%>" class="card-img-top" width="100%" height="auto" />
+              
+              <div>
+                <p class="card-text">
+                  <ul class="row list-unstyled ps-4">
+                    <li>Name: <%=post.name%></li>
+                    <li>Type: <%=post.type%></li>
+                    <li>Age: <%=post.age%></li>
+                    <li>Description: <%=post.description%></li>
+                  </ul>
+                </p>
+                <small class="text-muted">Date</small>
+                <!-- end of div card-body -->
+              </div>
+              <!-- end of div card -->
+            
+          </div>
+          
+          <!-- end of div col -->
+        </div>
+      </a>
+        <% } %>
+        <!-- end of div row -->
+      </div>
+      <!-- end of div container -->
+    </div>
+    <!-- end of div post -->
+  </div>
+
+  <div>
+    <button>
+      <a href="/account/createPost" class="text-decoration-none"
+        >Create Post
+      </a>
+    </button>
+  </div>
+</div>
 
 <%- include('partials/footer') -%>

@@ -1,75 +1,82 @@
 <%- include('partials/header') -%>
-<div class="container">
+<div class="container mx-auto" style="width: 400px;">
   <div class="row mt-5">
-      <div class="col-6">
+      <div>
     
-          <div class="mt-5">
+        <div>
             <h2>Create a post</h2>
-            <form action="/account/createPost" method="POST">
+          <form action="/account/createPost" enctype="multipart/form-data" method="POST">
               <div class="mb-3">
                   <label for="name" class="form-label">Name</label>
                   <input type="name" class="form-control" id="name" name="name">
               </div>
-              <div class="mb-3">
+
+              <div>
                 <label for="age" class="form-label">Age</label>
                 <input type="age" class="form-control" id="age" name="age">
-            </div>
-            <div class="mb-3">
-              <label for="type-select">Choose a type:</label>
+              </div>
 
+              <div>
+                <label for="type-select">Choose a type:</label>
                 <select name="type" id="type-select">
-                <option value="">--Please choose an option--</option>
-                <option value="dog">Dog</option>
-                <option value="cat">Cat</option>
-                <option value="cow">Cow</option>
-                <option value="horse">Horse</option>
-                <option value="goat">Goat</option>
-                <option value="pig">Pig</option>
-                <option value="others">Others</option>
-            </div>
-              <div class="mb-3">
-                <label for="description" class="form-label">Description<label>
+                  <option value="">--Please choose an option--</option>
+                  <option value="dog">Dog</option>
+                  <option value="cat">Cat</option>
+                  <option value="cow">Cow</option>
+                  <option value="horse">Horse</option>
+                  <option value="goat">Goat</option>
+                  <option value="pig">Pig</option>
+                  <option value="others">Others</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="description" class="form-label">Description</label>
                 <textarea class="form-control" id="description" name="description"></textarea>
               </div>
-              <div class="mb-3">
+
+              <div >
                 <label for="likes" class="form-label">Likes</label>
                 <textarea class="form-control" id="likes" name="likes"></textarea>
               </div>
-              <div class="mb-3">
+
+              <div>
                 <label for="dislikes" class="form-label">Dislikes</label>
                 <textarea class="form-control" id="dislikes" name="dislikes"></textarea>
               </div>
-              <div class="mb-3">
+
+              <div>
                 <label for="specialNeeds" class="form-label">Special Needs</label>
                 <textarea class="form-control" id="specialNeeds" name="specialNeeds"></textarea>
               </div>
-        <div class="mb-3">
-          <label for="forAdoption" class="form-label">For Adoption</label>
-                <select name="forAdoption" id="forAdoption-select">
-                <option value="">--Please choose an option--</option>
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-      </div>
-      <div class="mb-3">
-        <label for="forFoster" class="form-label">For Foster</label>
-              <select name="forFoster" id="forFoster-select">
-              <option value="">--Please choose an option--</option>
-              <option value="true">Yes</option>
-              <option value="false">No</option>
-    </div>
-              <div class="mb-3">
+
+              <div>
+                <label for="forAdoption-select" class="form-label">For Adoption</label>
+                  <select name="forAdoption" id="forAdoption-select">
+                    <option value="">--Please choose an option--</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                  </select>
+              </div>
+
+              <div>
+                <label for="forFoster-select" class="form-label">For Foster</label>
+                  <select name="forFoster" id="forFoster-select">
+                    <option value="">--Please choose an option--</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                  </select>
+              </div>
+
+              <div>
                 <label for="imgUpload" class="form-label">Image</label>
                 <!-- allows to choose the file type = 'file' -->
                 <input type="file" class="form-control" id="imageUpload" name="file">
               </div>
               <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
-            </form>
+          </form>
           </div>
       </div>
-      <div class="col-6">
-        <div class="row justify-content-center mt-5">
-          <a class="btn btn-primary" href="/">Return to Home</a>
-        </div>  
       </div>  
     </div>
   </div>
