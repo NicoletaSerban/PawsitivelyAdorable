@@ -13,12 +13,13 @@
         </p>
 
         <!-- Filter start -->
+
         <h3 class="text-center">Filter</h3>
-        <div class="btn-group" role="group" aria-label="button group">
+        <div class="btn-group d-flex gap-2" role="group" aria-label="button group">
           <div class="btn-group sm-text" role="group">
             <button
               type="button"
-              class="btn btn-primary btn-sm dropdown-toggle"
+              class="btn btn-outline-dark btn-sm dropdown-toggle"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
@@ -37,7 +38,7 @@
           <div class="btn-group" role="group">
             <button
               type="button"
-              class="btn btn-primary dropdown-toggle"
+              class="btn btn-outline-dark dropdown-toggle"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
@@ -51,12 +52,12 @@
               <li><a class="dropdown-item" href="#"> >15 years</a></li>
             </ul>
           </div>
-          <button type="button" class="btn btn-primary">For Adoption</button>
-          <button type="button" class="btn btn-primary">For Foster</button>
+          <button type="button" class="btn btn-outline-dark">For Adoption</button>
+          <button type="button" class="btn btn-outline-dark">For Foster</button>
           <div class="btn-group" role="group">
             <button
               type="button"
-              class="btn btn-primary dropdown-toggle"
+              class="btn btn-outline-dark dropdown-toggle"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
@@ -70,7 +71,7 @@
           <div class="btn-group" role="group">
             <button
               type="button"
-              class="btn btn-primary dropdown-toggle"
+              class="btn btn-outline-dark dropdown-toggle"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
@@ -106,13 +107,16 @@
               <div>
                 <p class="card-text">
                   <ul class="row list-unstyled ps-4">
-                    <li>Name: <%=post.name%></li>
-                    <li>Type: <%=post.type%></li>
-                    <li>Age: <%=post.age%></li>
-                    <li>Description: <%=post.description%></li>
+                    <li class="text-muted">Name: <%=post.name%></li>
+                    <li class="text-muted">Type: <%=post.type%></li>
+                    <li class="text-muted">Age: <%=post.age%></li>
+                    <li class="text-muted">Description: <%=post.description%></li>
+                    <li class="text-muted">For Adoption: <%=post.forAdoption%> </li>
+                    <li class="text-muted">For Foster: <%=post.forFoster%></li>
+                    <li><small class="text-muted">Date: <%=post.postDate.toLocaleString()%></small></li>
                   </ul>
                 </p>
-                <small class="text-muted">Date</small>
+                
                 <!-- end of div card-body -->
               </div>
               <!-- end of div card -->

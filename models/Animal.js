@@ -24,21 +24,19 @@ const AnimalSchema = new mongoose.Schema({
   },
   likes: {
     type: String,
-    required: true,
   },
   dislikes: {
     type: String,
-    required: true,
   },
   name: {
     type: String,
     required: true,
   },
   forAdoption: {
-    type: Boolean,
+    type: String,
   },
-  forAdoption: {
-    type: Boolean,
+  forFoster: {
+    type: String,
   },
   // user associated with the particular Post from DB
   userId: {
@@ -47,7 +45,7 @@ const AnimalSchema = new mongoose.Schema({
     // referred to User form our models
     ref: "User",
   },
-  postDatet: {
+  postDate: {
     type: Date,
     // sets up a date if not is specified
     default: Date.now,

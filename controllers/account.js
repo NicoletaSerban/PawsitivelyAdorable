@@ -29,6 +29,7 @@ module.exports = {
         forFoster: req.body.forFoster,
         cloudinaryId: result.public_id,
         image: `https://res.cloudinary.com/happy18/image/upload/ar_1:1,c_fill,g_auto,w_1000/v1664364719/${result.public_id}.jpg`,
+        postDate: req.body.postDate,
       });
       console.log("Post has been added!");
       res.redirect("/");
