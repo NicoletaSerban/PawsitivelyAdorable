@@ -5,21 +5,15 @@ const UserSchema = new mongoose.Schema({
   userName: { type: String, unique: true },
   email: { type: String, unique: true },
   password: String,
-  adress: {
-    type: String,
-    required: true,
-  },
   role: {
     type: String,
     required: true,
   },
   rating: {
     type: String,
-    required: true,
   },
   reported: {
     type: String,
-    required: true,
   },
   userDate: {
     type: Date,
