@@ -1,5 +1,4 @@
 const cloudinary = require("../middleware/cloudinary");
-const { rawListeners } = require("../models/Animal");
 const Post = require("../models/Animal");
 const User = require("../models/User");
 
@@ -18,7 +17,7 @@ module.exports = {
   getPost: async (req, res) => {
     try {
       // rendering profile page with the data from the DB
-      res.render("createPost.ejs");
+      res.render("createPost.ejs", { user: req.user });
     } catch (err) {
       console.log(err);
     }
