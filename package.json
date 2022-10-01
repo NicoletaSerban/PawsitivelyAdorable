@@ -1,7 +1,7 @@
 {
-  "name": "binary-upload-boom",
+  "name": "adopt-me",
   "version": "1.0.0",
-  "description": "100Devs Social Network",
+  "description": "Platform for adoption or foster different kind of animals",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
