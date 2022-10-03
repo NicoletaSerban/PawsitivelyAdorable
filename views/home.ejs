@@ -13,77 +13,54 @@
         </p>
 
         <!-- Filter start -->
+      <div class="container text-center">
+        <h2 class="text-muted">Filter</h2>
+        <div class="row align-items-start">
+        <form action="/filter?_method=GET" method="POST">
+          
+          <select  class="col text-muted" name="type" id="type" required>
+            <option value="">Type</option>
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+            <option value="cow">Cow</option>
+            <option value="horse">Horoption>
+            <option value="goat">Goat</option>
+            <option value="pig">Pig</option>
+            <option value="others">Otheoption>
+          </select>
+      
+         
+          <select  class="col text-muted" name="forAdoption" id="forAdoption" required>
+            <option value="">For Adoption</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+    
 
-        <h3 class="text-center">Filter</h3>
-        <div class="btn-group d-flex gap-2" role="group" aria-label="button group">
-          <div class="btn-group sm-text" role="group">
-            <button
-              type="button"
-              class="btn btn-outline-dark btn-sm dropdown-toggle"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Type
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Dog</a></li>
-              <li><a class="dropdown-item" href="#">Cat</a></li>
-              <li><a class="dropdown-item" href="#">Cow</a></li>
-              <li><a class="dropdown-item" href="#">Horse</a></li>
-              <li><a class="dropdown-item" href="#">Goat</a></li>
-              <li><a class="dropdown-item" href="#">Pig</a></li>
-              <li><a class="dropdown-item" href="#">Others</a></li>
-            </ul>
-          </div>
-          <div class="btn-group" role="group">
-            <button
-              type="button"
-              class="btn btn-outline-dark dropdown-toggle"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Age
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#"> < 1 year</a></li>
-              <li><a class="dropdown-item" href="#">1-5 years</a></li>
-              <li><a class="dropdown-item" href="#">5-10 years</a></li>
-              <li><a class="dropdown-item" href="#">10-15 years</a></li>
-              <li><a class="dropdown-item" href="#"> >15 years</a></li>
-            </ul>
-          </div>
-          <button type="button" class="btn btn-outline-dark">For Adoption</button>
-          <button type="button" class="btn btn-outline-dark">For Foster</button>
-          <div class="btn-group" role="group">
-            <button
-              type="button"
-              class="btn btn-outline-dark dropdown-toggle"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              By User
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">User 1</a></li>
-              <li><a class="dropdown-item" href="#">User 2</a></li>
-            </ul>
-          </div>
-          <div class="btn-group" role="group">
-            <button
-              type="button"
-              class="btn btn-outline-dark dropdown-toggle"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Location
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Location 1</a></li>
-              <li><a class="dropdown-item" href="#">Location 2</a></li>
-            </ul>
-          </div>
-          <!-- End of filter -->
-        </div>
+          <select  class="col text-muted" name="forFoster" id="forFoster" required>
+            <option value="">For Foster</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+  
+          <!-- <select class="col text-muted" name="location" id="location" required>
+            <option value="">Location</option>
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+            <option value="cow">Cow</option>
+            <option value="horse">Horoption>
+            <option value="goat">Goat</option>
+            <option value="pig">Pig</option>
+
+          </select> -->
+
+          <button type="submit" class="btn btn-outline-info btn-md">Submit</button>
+        </form>
+        <!-- end of row of filter dropdowns -->
+      </div>
+        <!-- end of filter -->
+      </div>
+        
         <!-- end of col -->
       </div>
       <!-- end of row -->
