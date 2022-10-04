@@ -7,7 +7,7 @@ module.exports = {
       type: req.body.type,
       forAdoption: req.body.forAdoption,
       forFoster: req.body.forFoster,
-      //   location: req.body.location,
+      location: req.body.location,
     })
       .sort({ postDate: "desc" })
       .lean();

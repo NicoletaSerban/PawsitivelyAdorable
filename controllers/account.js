@@ -38,6 +38,8 @@ module.exports = {
         specialNeeds: req.body.specialNeeds,
         forAdoption: req.body.forAdoption,
         forFoster: req.body.forFoster,
+        location: req.body.location,
+        createdByName: req.user.userName,
         cloudinaryId: result.public_id,
         image: `https://res.cloudinary.com/happy18/image/upload/ar_1:1,c_fill,g_auto,w_1000/v1664364719/${result.public_id}.jpg`,
         postDate: req.body.postDate,

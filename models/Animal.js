@@ -34,9 +34,11 @@ const AnimalSchema = new mongoose.Schema({
   },
   forAdoption: {
     type: String,
+    required: true,
   },
   forFoster: {
     type: String,
+    required: true,
   },
   // user associated with the particular Post from DB
   userId: {
@@ -45,6 +47,15 @@ const AnimalSchema = new mongoose.Schema({
     // referred to User form our models
     ref: "User",
   },
+  location: {
+    type: String,
+    required: true,
+  },
+  createdByName: {
+    type: String,
+    ref: "User",
+  },
+
   postDate: {
     type: Date,
     // sets up a date if not is specified
