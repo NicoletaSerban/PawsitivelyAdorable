@@ -8,17 +8,17 @@
           <form action="/account/createPost" enctype="multipart/form-data" method="POST">
               <div class="mb-3">
                   <label for="name" class="form-label">Name</label>
-                  <input type="name" class="form-control" id="name" name="name">
+                  <input type="name" class="form-control" id="name" name="name" required>
               </div>
 
               <div>
-                <label for="age" class="form-label">Age</label>
+                <label for="age" class="form-label" required>Age</label>
                 <input type="age" class="form-control" id="age" name="age">
               </div>
 
               <div>
                 <label for="type-select">Choose a type:</label>
-                <select name="type" id="type-select">
+                <select name="type" id="type-select" required>
                   <option value="">--Please choose an option--</option>
                   <option value="dog">Dog</option>
                   <option value="cat">Cat</option>
@@ -32,7 +32,7 @@
 
               <div>
                 <label for="description" class="form-label">Description</label>
-                <textarea class="form-control" id="description" name="description"></textarea>
+                <textarea class="form-control" id="description" name="description" required></textarea>
               </div>
 
               <div >
@@ -52,7 +52,7 @@
 
               <div>
                 <label for="forAdoption-select" class="form-label">For Adoption</label>
-                  <select name="forAdoption" id="forAdoption-select">
+                  <select name="forAdoption" id="forAdoption-select" required>
                     <option value="">--Please choose an option--</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
@@ -61,11 +61,63 @@
 
               <div>
                 <label for="forFoster-select" class="form-label">For Foster</label>
-                  <select name="forFoster" id="forFoster-select">
+                  <select name="forFoster" id="forFoster-select" required>
                     <option value="">--Please choose an option--</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                   </select>
+              </div>
+
+              <div>
+                <label for="location" class="form-label">Location</label>
+                  <select name="location" list="datalistOptions" id="location" required>
+                  <datalist  id="datalistOptions">
+                    <option value="">--Please choose your county--</option>
+                    <option value="Alba">Alba</option>
+                    <option value="Arad">Arad</option>
+                    <option value="Arges">Arges</option>
+                    <option value="Bacau">Bacau</option>
+                    <option value="Bihor">Bihor</option>
+                    <option value="Bistrita-Nasaud">Bistrita-Nasaud</option>
+                    <option value="Botosani">Botosani</option>
+                    <option value="Brasov">Brasov</option>
+                    <option value="Braila">Braila</option>
+                    <option value="Bucuresti">Bucuresti</option>
+                    <option value="Buzau">Buzau</option>
+                    <option value="Calarasi">Calarasi</option>
+                    <option value="Caras - Severin">Caras - Severin</option>
+                    <option value="Cluj">Cluj</option>
+                    <option value="Constanta">Constanta</option>
+                    <option value="Covasna">Covasna</option>
+                    <option value="Dambovita">Dambovita</option>
+                    <option value="Dolj">Dolj</option>
+                    <option value="Galati">Galati</option>
+                    <option value="Giurgiu">Giurgiu</option>
+                    <option value="Gorj">Gorj</option>
+                    <option value="Harghita">Harghita</option>
+                    <option value="Hunedoara">Hunedoara</option>
+                    <option value="Ialomita">Ialomita</option>
+                    <option value="Iasi">Iasi</option>
+                    <option value="Ilfov">Ilfov</option>
+                    <option value="Maramures">Maramures</option>
+                    <option value="Mehedinti">Mehedinti</option>
+                    <option value="Mures">Mures</option>
+                    <option value="Neamt">Neamt</option>
+                    <option value="Olt">Olt</option>
+                    <option value="Prahova">Prahova</option>
+                    <option value="Salaj">Salaj</option>
+                    <option value="Satu Mare">Satu Mare</option>
+                    <option value="Sibiu">Sibiu</option>
+                    <option value="Suceava">Suceava</option>
+                    <option value="Teleorman">Teleorman</option>
+                    <option value="Timis">Timis</option>
+                    <option value="Tulcea">Tulcea</option>
+                    <option value="Valcea">Valcea</option>
+                    <option value="Vaslui">Vaslui</option>
+                    <option value="Vrancea">Vrancea</option>
+                  </datalist>
+                  </select>
+                  <!-- end of location -->
               </div>
 
               <div>

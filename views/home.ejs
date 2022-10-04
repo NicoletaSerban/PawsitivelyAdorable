@@ -13,77 +13,93 @@
         </p>
 
         <!-- Filter start -->
+      <div class="container text-center">
+        <h2 class="text-muted">Filter</h2>
+        <div class="row align-items-start">
+        <form action="/filter?_method=GET" method="POST">
+          
+          <select  class="col text-muted" name="type" id="type" required>
+            <option value="">Type</option>
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+            <option value="cow">Cow</option>
+            <option value="horse">Horse</option>
+            <option value="goat">Goat</option>
+            <option value="pig">Pig</option>
+            <option value="others">Othe</option>
+          </select>
+      
+         
+          <select  class="col text-muted" name="forAdoption" id="forAdoption" required>
+            <option value="">For Adoption</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+    
 
-        <h3 class="text-center">Filter</h3>
-        <div class="btn-group d-flex gap-2" role="group" aria-label="button group">
-          <div class="btn-group sm-text" role="group">
-            <button
-              type="button"
-              class="btn btn-outline-dark btn-sm dropdown-toggle"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Type
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Dog</a></li>
-              <li><a class="dropdown-item" href="#">Cat</a></li>
-              <li><a class="dropdown-item" href="#">Cow</a></li>
-              <li><a class="dropdown-item" href="#">Horse</a></li>
-              <li><a class="dropdown-item" href="#">Goat</a></li>
-              <li><a class="dropdown-item" href="#">Pig</a></li>
-              <li><a class="dropdown-item" href="#">Others</a></li>
-            </ul>
-          </div>
-          <div class="btn-group" role="group">
-            <button
-              type="button"
-              class="btn btn-outline-dark dropdown-toggle"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Age
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#"> < 1 year</a></li>
-              <li><a class="dropdown-item" href="#">1-5 years</a></li>
-              <li><a class="dropdown-item" href="#">5-10 years</a></li>
-              <li><a class="dropdown-item" href="#">10-15 years</a></li>
-              <li><a class="dropdown-item" href="#"> >15 years</a></li>
-            </ul>
-          </div>
-          <button type="button" class="btn btn-outline-dark">For Adoption</button>
-          <button type="button" class="btn btn-outline-dark">For Foster</button>
-          <div class="btn-group" role="group">
-            <button
-              type="button"
-              class="btn btn-outline-dark dropdown-toggle"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              By User
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">User 1</a></li>
-              <li><a class="dropdown-item" href="#">User 2</a></li>
-            </ul>
-          </div>
-          <div class="btn-group" role="group">
-            <button
-              type="button"
-              class="btn btn-outline-dark dropdown-toggle"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Location
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Location 1</a></li>
-              <li><a class="dropdown-item" href="#">Location 2</a></li>
-            </ul>
-          </div>
-          <!-- End of filter -->
-        </div>
+          <select  class="col text-muted" name="forFoster" id="forFoster" required>
+            <option value="">For Foster</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+
+          <!-- start of location -->
+              <select class="col text-muted" name="location" list="datalistOptions" id="location">
+              <datalist  id="datalistOptions">
+                <option value="">--Please choose your county--</option>
+                <option value="Alba">Alba</option>
+                <option value="Arad">Arad</option>
+                <option value="Arges">Arges</option>
+                <option value="Bacau">Bacau</option>
+                <option value="Bihor">Bihor</option>
+                <option value="Bistrita-Nasaud">Bistrita-Nasaud</option>
+                <option value="Botosani">Botosani</option>
+                <option value="Brasov">Brasov</option>
+                <option value="Braila">Braila</option>
+                <option value="Bucuresti">Bucuresti</option>
+                <option value="Buzau">Buzau</option>
+                <option value="Calarasi">Calarasi</option>
+                <option value="Caras - Severin">Caras - Severin</option>
+                <option value="Cluj">Cluj</option>
+                <option value="Constanta">Constanta</option>
+                <option value="Covasna">Covasna</option>
+                <option value="Dambovita">Dambovita</option>
+                <option value="Dolj">Dolj</option>
+                <option value="Galati">Galati</option>
+                <option value="Giurgiu">Giurgiu</option>
+                <option value="Gorj">Gorj</option>
+                <option value="Harghita">Harghita</option>
+                <option value="Hunedoara">Hunedoara</option>
+                <option value="Ialomita">Ialomita</option>
+                <option value="Iasi">Iasi</option>
+                <option value="Ilfov">Ilfov</option>
+                <option value="Maramures">Maramures</option>
+                <option value="Mehedinti">Mehedinti</option>
+                <option value="Mures">Mures</option>
+                <option value="Neamt">Neamt</option>
+                <option value="Olt">Olt</option>
+                <option value="Prahova">Prahova</option>
+                <option value="Salaj">Salaj</option>
+                <option value="Satu Mare">Satu Mare</option>
+                <option value="Sibiu">Sibiu</option>
+                <option value="Suceava">Suceava</option>
+                <option value="Teleorman">Teleorman</option>
+                <option value="Timis">Timis</option>
+                <option value="Tulcea">Tulcea</option>
+                <option value="Valcea">Valcea</option>
+                <option value="Vaslui">Vaslui</option>
+                <option value="Vrancea">Vrancea</option>
+              </datalist>
+              </select>
+              <!-- end of location -->
+
+          <button type="submit" class="btn btn-outline-info btn-md">Submit</button>
+        </form>
+        <!-- end of row of filter dropdowns -->
+      </div>
+        <!-- end of filter -->
+      </div>
+        
         <!-- end of col -->
       </div>
       <!-- end of row -->
@@ -111,8 +127,10 @@
                     <li class="text-muted">Type: <%=post.type%></li>
                     <li class="text-muted">Age: <%=post.age%></li>
                     <li class="text-muted">Description: <%=post.description%></li>
+                    <li class="text-muted">Created by: <%=post.createdByName%></li>
                     <li class="text-muted">For Adoption: <%=post.forAdoption%> </li>
                     <li class="text-muted">For Foster: <%=post.forFoster%></li>
+                    <li class="text-muted">Location: <%=post.location%></li>
                     <li><small class="text-muted">Date: <%=post.postDate.toLocaleString()%></small></li>
                   </ul>
                 </p>

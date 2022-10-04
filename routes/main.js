@@ -8,12 +8,12 @@ const homeController = require("../controllers/home");
 
 //Main Routes - simplified for now
 router.get("/", homeController.getMain);
-// router.get("/filter", filterController.getFilter);
 router.get("/login", authController.getLogin);
 router.post("/login", authController.postLogin);
 router.get("/logout", authController.logout);
 router.get("/signup", authController.getSignup);
 router.post("/signup", authController.postSignup);
 router.get("/logout", authController.logout);
+router.get("/filter", filterController.getFilter);
 
 module.exports = router;
