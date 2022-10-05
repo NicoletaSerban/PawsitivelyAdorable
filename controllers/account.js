@@ -25,7 +25,9 @@ module.exports = {
   createPost: async (req, res) => {
     try {
       // Upload image to cloudinary
-      const result = await cloudinary.uploader.upload(req.file.path);
+      const result = await cloudinary.uploader.upload(req.file.path, {
+        folder: "adopt-me",
+      });
 
       // create a new post in Db using our post model
       await Post.create({

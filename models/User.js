@@ -20,6 +20,14 @@ const UserSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  image: {
+    type: String,
+    require: false,
+  },
+  cloudinaryId: {
+    type: String,
+    require: false,
+  },
 });
 
 // Password hash middleware.

@@ -1,0 +1,22 @@
+<%- include('partials/header') -%>
+
+<h2 class="text-center pt-4">My posts</h2>
+<div class="col-5">
+  <ul class="row list-unstyled text-center">
+    <% for(post of posts) {%>
+    <li class="col-6 justify-content-between mt-5">
+      <a href="/post/<%= post._id%>" class="text-decoration-none">
+        <img class="img-fluid" src="<%=post.image%>" />
+        <ul class="list-unstyled link-secondary">
+          <li><strong>Name</strong>: <%= post.name %></li>
+          <li>
+            <strong>Posted on</strong>: <%= post.postDate.toLocaleString() %>
+          </li>
+        </ul>
+      </a>
+    </li>
+    <% } %>
+  </ul>
+  <!-- end div my posts -->
+</div>
+<%- include('partials/footer') -%>
