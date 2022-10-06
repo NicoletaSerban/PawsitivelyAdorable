@@ -1,22 +1,55 @@
 <%- include('partials/header') -%>
+<div class="container">
+  <div class="row">
+    <h2 class="text-center pt-4"><%=animal.name%></h2>
+    <div class="col-5">
+      <img class="img-fluid pb-3" src="<%=animal.image%>" />
 
-<h2 class="text-center pt-4">My posts</h2>
-<div class="col-5">
-  <ul class="row list-unstyled text-center">
-    <% for(post of posts) {%>
-    <li class="col-6 justify-content-between mt-5">
-      <a href="/post/<%= post._id%>" class="text-decoration-none">
-        <img class="img-fluid" src="<%=post.image%>" />
-        <ul class="list-unstyled link-secondary">
-          <li><strong>Name</strong>: <%= post.name %></li>
-          <li>
-            <strong>Posted on</strong>: <%= post.postDate.toLocaleString() %>
-          </li>
-        </ul>
-      </a>
-    </li>
-    <% } %>
-  </ul>
-  <!-- end div my posts -->
+      <div class="d-flex gap-2 col-6 mx-auto pb-3">
+        <button type="button" class="btn btn-info">Adopt me</button>
+        <button type="button" class="btn btn-info">Foster me</button>
+
+        <!-- end of btn -->
+      </div>
+
+      <!-- end div pic -->
+    </div>
+
+    <div class="col-5">
+      <ul class="lh-lg fs-5 row list-unstyled pt-5">
+        <li>Age: <%=animal.age%></li>
+        <li>Type: <%=animal.type%></li>
+        <li>Special Needs: <%=animal.specialNeeds%></li>
+        <li>Posted date: <%=animal.postDate.toLocaleString()%></li>
+      </ul>
+    </div>
+    <!-- end of div row -->
+  </div>
+
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="card col p-2 mb-2 auto">
+        <div class="card-body">
+          <h3 class="">Description:</h3>
+          <p class="lead lh-base"><%=animal.description%></p>
+        </div>
+        <!-- end div description -->
+      </div>
+
+      <div class="card col p-2 mb-2 auto">
+        <div class="card-body">
+          <h3 class="">Likes:</h3>
+          <p class="lead lh-base"><%=animal.likes%></p>
+          <h3>Dislikes:</h3>
+          <p class="lh-base"><%=animal.dislikes%></p>
+        </div>
+
+        <!-- end div likes -->
+      </div>
+    </div>
+  </div>
+
+  <!-- end of div container -->
 </div>
+
 <%- include('partials/footer') -%>
