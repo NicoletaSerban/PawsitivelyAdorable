@@ -12,4 +12,17 @@ module.exports = {
       console.log(err);
     }
   },
+  // rateUser: async (req, res) => {
+  //   try {
+  //     await User.findOneAndUpdate(
+  //       { _id: req.params.id },
+  //       {
+  //         // increment proprety likes by one
+  //         $set: {
+  //           rating:
+  //         }
+  //       }
+  //     )
+  //   }
+  // }
 };

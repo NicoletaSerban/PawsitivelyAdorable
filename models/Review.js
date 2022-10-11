@@ -2,8 +2,8 @@ const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
 
 const ReviewSchema = new mongoose.Schema({
-  content: {
-    type: String,
+  rating: {
+    type: Number,
     required: true,
   },
   userId: {

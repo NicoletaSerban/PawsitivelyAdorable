@@ -6,8 +6,13 @@
       <img class="img-fluid pb-3" src="<%=animal.image%>" />
 
       <div class="d-flex gap-2 col-6 mx-auto pb-3">
+        <!-- to appear ony btn  -->
+        <% if(animal.forAdoption === 'Yes'){ %>
         <button type="button" class="btn btn-info">Adopt me</button>
+
+        <% } %> <% if(animal.forFoster === 'Yes'){ %>
         <button type="button" class="btn btn-info">Foster me</button>
+        <% } %>
 
         <!-- end of btn -->
       </div>
@@ -15,13 +20,30 @@
       <!-- end div pic -->
     </div>
 
-    <div class="col-5">
+    <div class="col-6">
       <ul class="lh-lg fs-5 row list-unstyled pt-5">
         <li>Age: <%=animal.age%></li>
         <li>Type: <%=animal.type%></li>
         <li>Special Needs: <%=animal.specialNeeds%></li>
         <li>Posted date: <%=animal.postDate.toLocaleString()%></li>
+        <li>Posted by: <%=animal.createdByName%> - <%=user.role%></li>
       </ul>
+      <div class="rate">
+        <h5>Rate the user</h5>
+
+        <input type="radio" id="star5" name="rate" value="5" />
+        <label for="star5" title="text">5 stars</label>
+        <input type="radio" id="star4" name="rate" value="4" />
+        <label for="star4" title="text">4 stars</label>
+        <input type="radio" id="star3" name="rate" value="3" />
+        <label for="star3" title="text">3 stars</label>
+        <input type="radio" id="star2" name="rate" value="2" />
+        <label for="star2" title="text">2 stars</label>
+        <input type="radio" id="star1" name="rate" value="1" />
+        <label for="star1" title="text">1 star</label>
+        <!-- end div rate -->
+      </div>
+      <!-- end form rating -->
     </div>
     <!-- end of div row -->
   </div>

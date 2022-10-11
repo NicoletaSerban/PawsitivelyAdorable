@@ -11,7 +11,8 @@ const UserSchema = new mongoose.Schema({
     required: true,
   },
   rating: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Review",
   },
   reported: {
     type: String,
