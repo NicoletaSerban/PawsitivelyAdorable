@@ -4,7 +4,9 @@ const mongoose = require("mongoose");
 const ReviewSchema = new mongoose.Schema({
   rating: {
     type: Number,
-    required: true,
+    min: 1,
+    max: 5,
+    validate: { validator: Number.isInteger },
   },
   userId: {
     type: mongoose.Schema.Types.ObjectId,

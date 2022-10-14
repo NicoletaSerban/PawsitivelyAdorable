@@ -1,0 +1,25 @@
+//custom variables
+$success: clean;
+$info: #35b0ab;
+$light:#fbf5e5;
+$dark: #797979;
+
+//import the functions & variables
+@import '../../node_modules/bootstrap/scss/_functions';
+@import '../../node_modules/bootstrap/scss/_variables';
+
+$custom-theme-colors: (
+    "greyblue": #8f9eac,
+    "minty": #a2bdba,
+    "light": #f5bd9b,
+    "powder": #666875,
+    
+
+
+);
+
+//merge with the existed theme colors
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
+
+//import boostrap
+@import '../../node_modules/bootstrap/scss/bootstrap'

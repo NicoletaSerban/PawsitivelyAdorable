@@ -11,9 +11,9 @@
               >My profile</a
             >
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/animal">Animals</a>
-          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/account/createAvatar">Avatar</a>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="/account/createPost">Create Post</a>
           </li>
@@ -29,12 +29,14 @@
         <img src="" class="card-img-top" alt="...">
         <div class="card-body text-center">
           <h5 class="card-title">Welcome</strong> <%= user.userName %></h5>
-          <p class="card-text"><ul class="list-unstyled">
+          <p class="card-text">
+            <ul class="list-unstyled">
             <li><strong>Email</strong>: <%= user.email %></li>
             <li><strong>Role</strong>: <%= user.role %></li>
             <li><strong>My Rating</strong>: <%= user.rating %></li>
             <li><strong>Report</strong>: <%= user.reported %></li>
-          </ul></p>
+          </ul>
+        </p>
         </div>
         <!-- end div myprofile -->
       </div>
