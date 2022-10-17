@@ -1,17 +1,18 @@
 <%- include('partials/header') -%>
-<div class="container">
+
+<div class="container main">
   <div class="row">
-    <h2 class="text-center pt-4"><%=animal.name%></h2>
+    <h2 class="text-center pt-4 text-greyblue"><%=animal.name%></h2>
     <div class="col-5">
       <img class="img-fluid pb-3" src="<%=animal.image%>" />
 
       <div class="d-flex gap-2 col-6 mx-auto pb-3">
         <!-- to appear ony btn  -->
         <% if(animal.forAdoption === 'Yes'){ %>
-        <button type="button" class="btn btn-info">Adopt me</button>
+        <button type="button" class="btn btn-info text-light">Adopt me</button>
 
         <% } %> <% if(animal.forFoster === 'Yes'){ %>
-        <button type="button" class="btn btn-info">Foster me</button>
+        <button type="button" class="btn btn-info text-light">Foster me</button>
         <% } %>
 
         <!-- end of btn -->
@@ -19,22 +20,33 @@
 
       <!-- end div pic -->
     </div>
-
     <div class="col-6">
-      <ul class="lh-lg fs-5 row list-unstyled pt-5">
+      <% if(animal.type === 'dog') {%>
+      <ul class="lh-lg fs-5 row list-unstyled pt-5 text-greyblue dog">
         <li>Age: <%=animal.age%></li>
         <li>Type: <%=animal.type%></li>
         <li>Special Needs: <%=animal.specialNeeds%></li>
         <li>Posted date: <%=animal.postDate.toLocaleString()%></li>
         <li>Posted by: <%=animal.createdByName%> - <%=user.role%></li>
       </ul>
+      <% } else{%>
 
+      <ul class="lh-lg fs-5 row list-unstyled pt-5 text-greyblue cat">
+        <li>Age: <%=animal.age%></li>
+        <li>Type: <%=animal.type%></li>
+        <li>Special Needs: <%=animal.specialNeeds%></li>
+        <li>Posted date: <%=animal.postDate.toLocaleString()%></li>
+        <li>Posted by: <%=animal.createdByName%> - <%=user.role%></li>
+      </ul>
+      <%} %>
+
+      <!-- start rating -->
       <form
         action="/account/review"
         enctype="multipart/form-data"
         method="POST"
       >
-        <div class="rate">
+        <div class="rate text-greyblue text">
           <h5>Rate the user</h5>
 
           <input type="radio" id="star5" name="rate" value="5" />
@@ -60,20 +72,20 @@
 
   <div class="container">
     <div class="row row-cols-1 row-cols-md-2 g-4">
-      <div class="card col p-2 mb-2 auto">
+      <div class="card col p-2 mb-2 auto main">
         <div class="card-body">
-          <h3 class="">Description:</h3>
-          <p class="lead lh-base"><%=animal.description%></p>
+          <h3 class="text-greyblue">Description:</h3>
+          <p class="lead lh-base text-powder"><%=animal.description%></p>
         </div>
         <!-- end div description -->
       </div>
 
-      <div class="card col p-2 mb-2 auto">
+      <div class="card col p-2 mb-2 auto main">
         <div class="card-body">
-          <h3 class="">Likes:</h3>
-          <p class="lead lh-base"><%=animal.likes%></p>
-          <h3>Dislikes:</h3>
-          <p class="lh-base"><%=animal.dislikes%></p>
+          <h3 class="text-greyblue">Likes:</h3>
+          <p class="lead lh-base text-powder"><%=animal.likes%></p>
+          <h3 class="text-greyblue">Dislikes:</h3>
+          <p class="lh-base text-powder"><%=animal.dislikes%></p>
         </div>
 
         <!-- end div likes -->

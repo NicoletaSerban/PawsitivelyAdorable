@@ -37,22 +37,45 @@
   content: "★ ";
 }
 .rate > input:checked ~ label {
-  color: #ffc700;
+  color: #35b0ab;
 }
 .rate:not(:checked) > label:hover,
 .rate:not(:checked) > label:hover ~ label {
-  color: #deb217;
+  color: #93c9c2;
 }
 .rate > input:checked + label:hover,
 .rate > input:checked + label:hover ~ label,
 .rate > input:checked ~ label:hover,
 .rate > input:checked ~ label:hover ~ label,
 .rate > label:hover ~ input:checked ~ label {
-  color: #c59b08;
+  color: #8f9eac;
 }
 
-/* img background home */
+/* img background */
 
+/* home */
+.main {
+  background: rgb(147, 201, 194);
+  background: linear-gradient(
+    160deg,
+    rgba(147, 201, 194, 1) 25%,
+    rgba(143, 158, 172, 1) 56%
+  );
+}
+/* about */
 .about {
-  background: url("/public/imgs/noBackground.png") no-repeat center;
+  background: url(/imgs/aboutNoback.png);
+  background-size: 70% 100%;
+}
+
+/* /animal if type is dog */
+.dog {
+  background: url(/imgs/dogHeart.png);
+  background-size: 100% 100%;
+}
+
+/* /animal if type is cat */
+.cat {
+  background: url(/imgs/catHeart.png);
+  background-size: 100% 100%;
 }

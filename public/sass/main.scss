@@ -1,7 +1,7 @@
 //custom variables
-$success: clean;
+// $success:;
 $info: #35b0ab;
-$light:#fbf5e5;
+$light:#FFFDD0;
 $dark: #797979;
 
 //import the functions & variables
@@ -10,12 +10,9 @@ $dark: #797979;
 
 $custom-theme-colors: (
     "greyblue": #8f9eac,
-    "minty": #a2bdba,
-    "light": #f5bd9b,
+    "minty": #93c9c2,
+    "peach": #f5bd9b,
     "powder": #666875,
-    
-
-
 );
 
 //merge with the existed theme colors

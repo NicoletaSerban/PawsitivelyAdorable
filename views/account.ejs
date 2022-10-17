@@ -7,7 +7,7 @@
       <div>
         <ul class="nav nav-tabs">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/account"
+            <a class="nav-link active text-powder" aria-current="page" href="/account"
               >My profile</a
             >
           </li>
@@ -15,10 +15,10 @@
             <a class="nav-link" href="/account/createAvatar">Avatar</a>
           </li> -->
           <li class="nav-item">
-            <a class="nav-link" href="/account/createPost">Create Post</a>
+            <a class="nav-link text-powder" href="/account/createPost">Create Post</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/">Main Page</a>
+            <a class="nav-link text-powder" href="/">Main Page</a>
           </li>
         </ul>
       </div>
@@ -28,9 +28,9 @@
       <div class="card pt-5">
         <img src="" class="card-img-top" alt="...">
         <div class="card-body text-center">
-          <h5 class="card-title">Welcome</strong> <%= user.userName %></h5>
+          <h5 class="card-title text-powder">Welcome</strong> <%= user.userName %></h5>
           <p class="card-text">
-            <ul class="list-unstyled">
+            <ul class="list-unstyled text-powder">
             <li><strong>Email</strong>: <%= user.email %></li>
             <li><strong>Role</strong>: <%= user.role %></li>
             <li><strong>My Rating</strong>: <%= user.rating %></li>
@@ -44,18 +44,19 @@
     </div>
 
     <!-- my post starts -->
-      <h2 class="text-center pt-4">My posts</h2>
-      <div class="col-5">
+      <h2 class="text-center pt-4 text-powder">My posts</h2>
+      <div class="col-5 section-bg">
         <ul class="row list-unstyled text-center" >
           <% for(post of posts) {%>
           <li class="col-6 justify-content-between mt-5">
             <a href="/animal/<%=post._id%>" class="text-decoration-none">
               <img class="img-fluid" src="<%=post.image%>" />
-              <ul class="list-unstyled link-secondary">
+              <ul class="list-unstyled link-secondary text-greyblue">
                 <li><strong>Name</strong>: <%= post.name %></li>
                 <li><strong>Posted on</strong>: <%= post.postDate.toLocaleString() %></li>
               </ul>
             </a>
+            <div class="d-flex justify-content-center">
               <form
                 action="/account/deletePost/<%= post.id %>?_method=DELETE"
                 method="POST"
@@ -63,6 +64,7 @@
               >
                 <button class="btn btn-danger btn-sm" type="submit">Delete</button>
               </form>
+            </div>
           </li>
           <% } %>
         </ul>
