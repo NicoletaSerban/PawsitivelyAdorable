@@ -1,13 +1,13 @@
 <%- include('partials/header') -%>
-<div class="container">
-  <div class="row mt-5">
+<div class="container main">
+  <div class="row">
     <!-- start div for page buttons -->
     <div class="col-7 mx-auto">
       <!-- start of buttons -->
       <div>
         <ul class="nav nav-tabs">
           <li class="nav-item">
-            <a class="nav-link active text-powder" aria-current="page" href="/account"
+            <a class="nav-link active text-peach fw-semibold" aria-current="page" href="/account"
               >My profile</a
             >
           </li>
@@ -15,22 +15,25 @@
             <a class="nav-link" href="/account/createAvatar">Avatar</a>
           </li> -->
           <li class="nav-item">
-            <a class="nav-link text-powder" href="/account/createPost">Create Post</a>
+            <a class="nav-link text-peach fw-semibold" href="/account/createPost">Create Post</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-powder" href="/">Main Page</a>
+            <a class="nav-link text-peach fw-semibold" href="/">Main Page</a>
           </li>
         </ul>
       </div>
       <!-- end buttons -->
 
       <!-- start myprofile page -->
-      <div class="card pt-5">
-        <img src="" class="card-img-top" alt="...">
+      <div class="card pt-5" style="background-image:url(/imgs/back2.png)" >
+        <div class="card-img-top row" alt="...">
+          <img class="rounded d-block img-fluid avatar" src="https://avatars.dicebear.com/api/croodles-neutral/animals.svg" >
+        </div>
+        
         <div class="card-body text-center">
-          <h5 class="card-title text-powder">Welcome</strong> <%= user.userName %></h5>
+          <h5 class="card-title text-peach">Welcome</strong> <%= user.userName %></h5>
           <p class="card-text">
-            <ul class="list-unstyled text-powder">
+            <ul class="list-unstyled text-light">
             <li><strong>Email</strong>: <%= user.email %></li>
             <li><strong>Role</strong>: <%= user.role %></li>
             <li><strong>My Rating</strong>: <%= user.rating %></li>
@@ -51,7 +54,7 @@
           <li class="col-6 justify-content-between mt-5">
             <a href="/animal/<%=post._id%>" class="text-decoration-none">
               <img class="img-fluid" src="<%=post.image%>" />
-              <ul class="list-unstyled link-secondary text-greyblue">
+              <ul class="list-unstyled link-secondary text-light">
                 <li><strong>Name</strong>: <%= post.name %></li>
                 <li><strong>Posted on</strong>: <%= post.postDate.toLocaleString() %></li>
               </ul>
@@ -62,7 +65,7 @@
                 method="POST"
                 class="col-3"
               >
-                <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                <button class="btn btn-danger btn-sm text-light" type="submit">Delete</button>
               </form>
             </div>
           </li>

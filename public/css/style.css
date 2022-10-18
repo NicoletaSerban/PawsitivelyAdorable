@@ -67,15 +67,27 @@
   background: url(/imgs/aboutNoback.png);
   background-size: 70% 100%;
 }
-
-/* /animal if type is dog */
-.dog {
-  background: url(/imgs/dogHeart.png);
-  background-size: 100% 100%;
+/* login */
+.btn-color {
+  background-color: #0e1c36;
+  color: #fff;
 }
 
-/* /animal if type is cat */
-.cat {
-  background: url(/imgs/catHeart.png);
-  background-size: 100% 100%;
+.profile-image-pic {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+
+.cardbody-color {
+  background-color: #ebf2fa;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* avatar */
+.avatar {
+  height: 50%;
 }

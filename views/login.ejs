@@ -1,41 +1,71 @@
 <%- include('partials/header') -%>
 
-<main class="container">
-  <div class="row justify-content-center">
-    <section class="col-6 mt-5">
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 offset-md-3">
+      <div class="text-center text-minty mt-3 fw-bold fs-3">Login</div>
       <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
       <div class="alert alert-danger"><%= el.msg %></div>
       <% }) %> <% } %> <% if (locals.messages.info) { %> <%
       messages.info.forEach( el => { %>
       <div class="alert alert-info"><%= el.msg %></div>
       <% }) %> <% } %>
-      <form action="/login" method="POST">
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"
-            >Email address</label
-          >
-          <input
-            type="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            name="email"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="exampleInputPassword1"
-            name="password"
-          />
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    </section>
-    <a href="/signup">SIGNUP</a>
+      <div class="card my-5">
+        <form
+          class="card-body cardbody-color p-lg-5 main"
+          action="/login"
+          method="POST"
+        >
+          <div class="text-center">
+            <img
+              src="https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295397__340.png"
+              class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+              width="200px"
+              alt="profile"
+            />
+          </div>
+
+          <div class="mb-3 text-minty">
+            <label
+              for="exampleInputEmail1"
+              class="form-label text-powder fw-semibold"
+              >Email address</label
+            >
+            <input
+              type="email"
+              class="form-control text-minty"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              name="email"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label text-powder fw-semibold"
+              >Password</label
+            >
+            <input
+              type="password"
+              class="form-control text-minty"
+              id="exampleInputPassword1"
+              name="password"
+            />
+          </div>
+          <div class="text-center">
+            <button
+              type="submit"
+              class="btn btn-minty px-5 mb-5 text-powder fw-semibold"
+            >
+              Login
+            </button>
+          </div>
+          <div id="emailHelp" class="form-text text-center mb-5 text-light">
+            Not Registered?
+            <a href="/signup" class="text-light fw-bold"> Create an Account </a>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
-</main>
+</div>
 
 <%- include('partials/footer') -%>
