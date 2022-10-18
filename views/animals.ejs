@@ -1,0 +1,99 @@
+<%- include('partials/header') -%>
+
+<div class="container main">
+  <div class="row">
+    <h2 class="text-center pt-4 text-greyblue"><%=animal.name%></h2>
+    <div class="col-5">
+      <img class="img-fluid pb-3" src="<%=animal.image%>" />
+
+      <div class="d-flex gap-2 col-6 mx-auto pb-3">
+        <!-- to appear ony btn  -->
+        <% if(animal.forAdoption === 'Yes'){ %>
+        <button type="button" class="btn btn-info text-light">Adopt me</button>
+
+        <% } %> <% if(animal.forFoster === 'Yes'){ %>
+        <button type="button" class="btn btn-info text-light">Foster me</button>
+        <% } %>
+
+        <!-- end of btn -->
+      </div>
+
+      <!-- end div pic -->
+    </div>
+    <div class="col-6">
+      <% if(animal.type === 'dog') {%>
+      <ul class="lh-lg fs-5 row list-unstyled pt-5 text-greyblue dog">
+        <li>Age: <%=animal.age%></li>
+        <li>Type: <%=animal.type%></li>
+        <li>Special Needs: <%=animal.specialNeeds%></li>
+        <li>Posted date: <%=animal.postDate.toLocaleString()%></li>
+        <li>Posted by: <%=animal.createdByName%> - <%=user.role%></li>
+      </ul>
+      <% } else{%>
+
+      <ul class="lh-lg fs-5 row list-unstyled pt-5 text-greyblue cat">
+        <li>Age: <%=animal.age%></li>
+        <li>Type: <%=animal.type%></li>
+        <li>Special Needs: <%=animal.specialNeeds%></li>
+        <li>Posted date: <%=animal.postDate.toLocaleString()%></li>
+        <li>Posted by: <%=animal.createdByName%> - <%=user.role%></li>
+      </ul>
+      <%} %>
+
+      <!-- start rating -->
+      <form
+        action="/account/review"
+        enctype="multipart/form-data"
+        method="POST"
+      >
+        <div class="rate text-greyblue text">
+          <h5>Rate the user</h5>
+
+          <input type="radio" id="star5" name="rate" value="5" />
+          <label for="star5" title="text">5 stars</label>
+          <input type="radio" id="star4" name="rate" value="4" />
+          <label for="star4" title="text">4 stars</label>
+          <input type="radio" id="star3" name="rate" value="3" />
+          <label for="star3" title="text">3 stars</label>
+          <input type="radio" id="star2" name="rate" value="2" />
+          <label for="star2" title="text">2 stars</label>
+          <input type="radio" id="star1" name="rate" value="1" />
+          <label for="star1" title="text">1 star</label>
+
+          <!-- end form rating -->
+
+          <!-- end div rate -->
+        </div>
+        <!-- <button class="btn btn-primary" type="submit">Submit</button> -->
+      </form>
+    </div>
+    <!-- end of div row -->
+  </div>
+
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="card col p-2 mb-2 auto main">
+        <div class="card-body">
+          <h3 class="text-greyblue">Description:</h3>
+          <p class="lead lh-base text-powder"><%=animal.description%></p>
+        </div>
+        <!-- end div description -->
+      </div>
+
+      <div class="card col p-2 mb-2 auto main">
+        <div class="card-body">
+          <h3 class="text-greyblue">Likes:</h3>
+          <p class="lead lh-base text-powder"><%=animal.likes%></p>
+          <h3 class="text-greyblue">Dislikes:</h3>
+          <p class="lh-base text-powder"><%=animal.dislikes%></p>
+        </div>
+
+        <!-- end div likes -->
+      </div>
+    </div>
+  </div>
+
+  <!-- end of div container -->
+</div>
+
+<%- include('partials/footer') -%>

@@ -1,1 +1,81 @@
+/* required asterisk */
+.form-group.required .form-label:after {
+  content: "*";
+  color: red;
+}
 
+.control-label:before {
+  content: "*";
+  color: red;
+}
+
+/* rating stars */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+.rate {
+  float: left;
+  height: 46px;
+  padding: 0 10px;
+}
+.rate:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+}
+.rate:not(:checked) > label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
+}
+.rate:not(:checked) > label:before {
+  content: "★ ";
+}
+.rate > input:checked ~ label {
+  color: #35b0ab;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  color: #93c9c2;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+  color: #8f9eac;
+}
+
+/* img background */
+
+/* home */
+.main {
+  background: rgb(147, 201, 194);
+  background: linear-gradient(
+    160deg,
+    rgba(147, 201, 194, 1) 25%,
+    rgba(143, 158, 172, 1) 56%
+  );
+}
+/* about */
+.about {
+  background: url(/imgs/aboutNoback.png);
+  background-size: 70% 100%;
+}
+
+/* /animal if type is dog */
+.dog {
+  background: url(/imgs/dogHeart.png);
+  background-size: 100% 100%;
+}
+
+/* /animal if type is cat */
+.cat {
+  background: url(/imgs/catHeart.png);
+  background-size: 100% 100%;
+}

@@ -2,9 +2,11 @@ const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
 
 const ReviewSchema = new mongoose.Schema({
-  content: {
-    type: String,
-    required: true,
+  rating: {
+    type: Number,
+    min: 1,
+    max: 5,
+    validate: { validator: Number.isInteger },
   },
   userId: {
     type: mongoose.Schema.Types.ObjectId,

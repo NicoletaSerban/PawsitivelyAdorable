@@ -1,30 +1,80 @@
 <%- include('partials/header') -%>
 <div class="container">
   <div class="row mt-5">
-    <div class="col-6">
+    <!-- start div for page buttons -->
+    <div class="col-7 mx-auto">
+      <!-- start of buttons -->
       <div>
-        <p><strong>Welcome</strong>: <%= user.userName %></p>
-        <p><strong>Email</strong>: <%= user.email %></p>
-        <div class="col-6">
-          <ul class="row list-unstyled">
-            <% for(post of posts) {%>
-            <li class="col-6 justify-content-between mt-5">
-              <a href="/post/<%= post._id%>">
-                <img class="img-fluid" src="<%=post.image%>" />
-              </a>
-            </li>
-            <% } %>
-          </ul>
-          <div class="row justify-content-center mt-5">
-            <a class="btn btn-primary" href="/">Return to Feed</a>
-            <a class="btn btn-primary" href="/account/createPost"
-              >Create Post</a
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active text-powder" aria-current="page" href="/account"
+              >My profile</a
             >
-          </div>
-        </div>
-        <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/account/createAvatar">Avatar</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link text-powder" href="/account/createPost">Create Post</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-powder" href="/">Main Page</a>
+          </li>
+        </ul>
       </div>
+      <!-- end buttons -->
+
+      <!-- start myprofile page -->
+      <div class="card pt-5">
+        <img src="" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title text-powder">Welcome</strong> <%= user.userName %></h5>
+          <p class="card-text">
+            <ul class="list-unstyled text-powder">
+            <li><strong>Email</strong>: <%= user.email %></li>
+            <li><strong>Role</strong>: <%= user.role %></li>
+            <li><strong>My Rating</strong>: <%= user.rating %></li>
+            <li><strong>Report</strong>: <%= user.reported %></li>
+          </ul>
+        </p>
+        </div>
+        <!-- end div myprofile -->
+      </div>
+      <!-- end div for page buttons-->
     </div>
+
+    <!-- my post starts -->
+      <h2 class="text-center pt-4 text-powder">My posts</h2>
+      <div class="col-5 section-bg">
+        <ul class="row list-unstyled text-center" >
+          <% for(post of posts) {%>
+          <li class="col-6 justify-content-between mt-5">
+            <a href="/animal/<%=post._id%>" class="text-decoration-none">
+              <img class="img-fluid" src="<%=post.image%>" />
+              <ul class="list-unstyled link-secondary text-greyblue">
+                <li><strong>Name</strong>: <%= post.name %></li>
+                <li><strong>Posted on</strong>: <%= post.postDate.toLocaleString() %></li>
+              </ul>
+            </a>
+            <div class="d-flex justify-content-center">
+              <form
+                action="/account/deletePost/<%= post.id %>?_method=DELETE"
+                method="POST"
+                class="col-3"
+              >
+                <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+              </form>
+            </div>
+          </li>
+          <% } %>
+        </ul>
+        <!-- end div my posts -->
+      </div>
+
+      <!-- end div row -->
+    </div>
+    <!-- end div container -->
   </div>
+ 
 </div>
 <%- include('partials/footer') -%>

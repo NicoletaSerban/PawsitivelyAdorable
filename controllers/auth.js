@@ -92,6 +92,7 @@ exports.postSignup = (req, res, next) => {
     password: req.body.password,
     role: req.body.role,
     userDate: req.body.userDate,
+    image: req.body.image,
   });
 
   User.findOne(

@@ -6,17 +6,17 @@
         <div>
             <h2>Create a post</h2>
           <form action="/account/createPost" enctype="multipart/form-data" method="POST">
-              <div class="mb-3">
+              <div class="mb-3 form-group required">
                   <label for="name" class="form-label">Name</label>
                   <input type="name" class="form-control" id="name" name="name" required>
               </div>
 
-              <div>
-                <label for="age" class="form-label" required>Age</label>
-                <input type="age" class="form-control" id="age" name="age">
+              <div class="form-group required">
+                <label for="age" class="form-label" >Age</label>
+                <input type="age" class="form-control" id="age" name="age" required>
               </div>
 
-              <div>
+              <div class="form-group required">
                 <label for="type-select">Choose a type:</label>
                 <select name="type" id="type-select" required>
                   <option value="">--Please choose an option--</option>
@@ -30,7 +30,7 @@
                 </select>
               </div>
 
-              <div>
+              <div class="form-group required">
                 <label for="description" class="form-label">Description</label>
                 <textarea class="form-control" id="description" name="description" required></textarea>
               </div>
@@ -50,7 +50,7 @@
                 <textarea class="form-control" id="specialNeeds" name="specialNeeds"></textarea>
               </div>
 
-              <div>
+              <div class="form-group required">
                 <label for="forAdoption-select" class="form-label">For Adoption</label>
                   <select name="forAdoption" id="forAdoption-select" required>
                     <option value="">--Please choose an option--</option>
@@ -59,7 +59,7 @@
                   </select>
               </div>
 
-              <div>
+              <div class="form-group required">
                 <label for="forFoster-select" class="form-label">For Foster</label>
                   <select name="forFoster" id="forFoster-select" required>
                     <option value="">--Please choose an option--</option>
@@ -68,7 +68,7 @@
                   </select>
               </div>
 
-              <div>
+              <div class="form-group required">
                 <label for="location" class="form-label">Location</label>
                   <select name="location" list="datalistOptions" id="location" required>
                   <datalist  id="datalistOptions">
@@ -120,7 +120,7 @@
                   <!-- end of location -->
               </div>
 
-              <div>
+              <div class="form-group required">
                 <label for="imgUpload" class="form-label">Image</label>
                 <!-- allows to choose the file type = 'file' -->
                 <input type="file" class="form-control" id="imageUpload" name="file">
@@ -129,8 +129,15 @@
           </form>
           </div>
       </div>
+      
       </div>  
+      <div class="form-group required  pt-4">
+        <label  class="control-label fw-bolder ">Required</label>
+      </div>
     </div>
+      
+    <!-- end div row -->
   </div>
+  <!-- end of container -->
 </div>
 <%- include('partials/footer') -%>

@@ -11,14 +11,24 @@ const UserSchema = new mongoose.Schema({
     required: true,
   },
   rating: {
-    type: String,
+    type: Number,
+    default: 0,
   },
   reported: {
-    type: String,
+    type: Number,
+    default: 0,
   },
   userDate: {
     type: Date,
     default: Date.now,
+  },
+  profileImg: {
+    type: String,
+    require: false,
+  },
+  cloudinaryId: {
+    type: String,
+    require: false,
   },
 });
 

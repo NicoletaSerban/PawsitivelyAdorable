@@ -1,11 +1,11 @@
 <%- include('partials/header') -%>
 
-<div class="container">
+<div class="container main">
   <div class="py-5 text center container">
-    <div class="row">
+    <div class="row about">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <h1 class="fw-light text-center">About site</h1>
-        <p class="lead text-muted">
+        <h1 class="text-center text-powder fw-bold">About site</h1>
+        <p class="lead text-light">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eligendi
           eum natus suscipit magni nam. Eligendi minus ipsa illo, labore modi,
           quas suscipit adipisci tenetur ab, numquam eveniet exercitationem
@@ -14,11 +14,11 @@
 
         <!-- Filter start -->
       <div class="container text-center">
-        <h2 class="text-muted">Filter</h2>
+        <h2 class="text-powder">Filter</h2>
         <div class="row align-items-start">
         <form action="/filter?_method=GET" method="POST">
           
-          <select  class="col text-muted" name="type" id="type" required>
+          <select  class="col text-minty" name="type" id="type" required>
             <option value="">Type</option>
             <option value="dog">Dog</option>
             <option value="cat">Cat</option>
@@ -30,21 +30,21 @@
           </select>
       
          
-          <select  class="col text-muted" name="forAdoption" id="forAdoption" required>
+          <select  class="col text-minty" name="forAdoption" id="forAdoption" required>
             <option value="">For Adoption</option>
             <option value="Yes">Yes</option>
             <option value="No">No</option>
           </select>
     
 
-          <select  class="col text-muted" name="forFoster" id="forFoster" required>
+          <select  class="col text-minty" name="forFoster" id="forFoster" required>
             <option value="">For Foster</option>
             <option value="Yes">Yes</option>
             <option value="No">No</option>
           </select>
 
           <!-- start of location -->
-              <select class="col text-muted" name="location" list="datalistOptions" id="location">
+              <select class="col text-minty" name="location" list="datalistOptions" id="location">
               <datalist  id="datalistOptions">
                 <option value="">--Please choose your county--</option>
                 <option value="Alba">Alba</option>
@@ -93,7 +93,7 @@
               </select>
               <!-- end of location -->
 
-          <button type="submit" class="btn btn-outline-info btn-md">Submit</button>
+          <button type="submit" class="btn btn-outline-minty btn-md text-powder fw-semibold">Submit</button>
         </form>
         <!-- end of row of filter dropdowns -->
       </div>
@@ -108,12 +108,12 @@
   </div>
 
   <!-- post start -->
-  <div class="post py-5 bg-light">
+  <div class="post py-5">
     <div class="container">
       
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <% for(post of feed) {%>
-          <a href="/feed/<%=post._id%>" class="text-decoration-none"> 
+          <a href="/animal/<%=post._id%>" class="text-decoration-none"> 
         <div class="col">
           
           <div class="card shadow-sm">
@@ -123,15 +123,15 @@
               <div>
                 <p class="card-text">
                   <ul class="row list-unstyled ps-4">
-                    <li class="text-muted">Name: <%=post.name%></li>
-                    <li class="text-muted">Type: <%=post.type%></li>
-                    <li class="text-muted">Age: <%=post.age%></li>
-                    <li class="text-muted">Description: <%=post.description%></li>
-                    <li class="text-muted">Created by: <%=post.createdByName%></li>
-                    <li class="text-muted">For Adoption: <%=post.forAdoption%> </li>
-                    <li class="text-muted">For Foster: <%=post.forFoster%></li>
-                    <li class="text-muted">Location: <%=post.location%></li>
-                    <li><small class="text-muted">Date: <%=post.postDate.toLocaleString()%></small></li>
+                    <li class="text-greyblue">Name: <%=post.name%></li>
+                    <li class="text-greyblue">Type: <%=post.type%></li>
+                    <li class="text-greyblue">Age: <%=post.age%></li>
+                    <li class="text-greyblue">Description: <%=post.description%></li>
+                    <li class="text-greyblue">Created by: <%=post.createdByName%></li>
+                    <li class="text-greyblue">For Adoption: <%=post.forAdoption%> </li>
+                    <li class="text-greyblue">For Foster: <%=post.forFoster%></li>
+                    <li class="text-greyblue">Location: <%=post.location%></li>
+                    <li><small class="text-greyblue">Date: <%=post.postDate.toLocaleString()%></small></li>
                   </ul>
                 </p>
                 
@@ -149,16 +149,20 @@
       </div>
       <!-- end of div container -->
     </div>
+    
+     
     <!-- end of div post -->
   </div>
-
-  <div>
-    <button>
-      <a href="/account/createPost" class="text-decoration-none"
+  <div class="d-flex justify-content-center">
+       
+    <button type="button" class="btn btn-outline-minty btn-lg fw-semibold">
+      <a href="/account/createPost" class="text-decoration-none  text-powder"
         >Create Post
       </a>
     </button>
+  
   </div>
+  
 </div>
 
 <%- include('partials/footer') -%>
