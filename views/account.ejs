@@ -27,7 +27,7 @@
       <!-- start myprofile page -->
       <div class="card pt-5" style="background-image:url(/imgs/back2.png)" >
         <div class="card-img-top row" alt="...">
-          <img class="rounded d-block img-fluid avatar" src="https://avatars.dicebear.com/api/croodles-neutral/animals.svg" >
+          <img class="rounded d-block img-fluid " id="avatar" src="https://avatars.dicebear.com/api/big-smile/:seed.png" >
         </div>
         
         <div class="card-body text-center">
@@ -67,6 +67,14 @@
               >
                 <button class="btn btn-danger btn-sm text-light" type="submit">Delete</button>
               </form>
+              <form
+                action="/account/editPost/<%= post.id %>?_method=PUT"
+                method="POST"
+                class="col-3"
+              >
+                <button class="btn btn-powder btn-sm text-light" type="submit">Edit</button>
+              </form>
+              
             </div>
           </li>
           <% } %>

@@ -88,6 +88,8 @@ a {
 }
 
 /* avatar */
-.avatar {
-  height: 50%;
+#avatar {
+  height: 70%;
+  max-width: 150px;
+  margin: 0 auto;
 }
