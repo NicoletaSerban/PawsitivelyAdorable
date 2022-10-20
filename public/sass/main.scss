@@ -1,5 +1,5 @@
 //custom variables
-// $success:;
+$success:#c1e1ec;
 $info: #35b0ab;
 $light:#FFFDD0;
 $dark: #797979;
@@ -20,3 +20,4 @@ $theme-colors: map-merge($custom-theme-colors, $theme-colors);
 
 //import boostrap
 @import '../../node_modules/bootstrap/scss/bootstrap'
+

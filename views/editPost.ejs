@@ -4,21 +4,23 @@
       <div>
     
         <div>
-            <h2 class="text-peach pt-3 text-center">Create a post</h2>
-          <form action="/account/createPost" enctype="multipart/form-data" method="POST">
-              <div class="mb-3 form-group required">
+            <h2 class="text-peach pt-3 text-center">Edit</h2>
+          <form action=action="/account/editPost/<%= post.id%>?_method=PUT"
+            method="POST"
+            class="col-3">
+              <div class="mb-3">
                   <label for="name" class="form-label text-light">Name</label>
-                  <input type="name" class="form-control" id="name" name="name" required>
+                  <input type="name" class="form-control" id="name" name="name">
               </div>
 
-              <div class="form-group required">
+              <div >
                 <label for="age" class="form-label text-light" >Age</label>
-                <input type="age" class="form-control" id="age" name="age" required>
+                <input type="age" class="form-control" id="age" name="age">
               </div>
 
-              <div class="form-group required pt-3 pb-3">
+              <div class=" pt-3 pb-3">
                 <label for="type-select" class="text-light">Choose a type:</label>
-                <select name="type" id="type-select" class="text-minty" required>
+                <select name="type" id="type-select" class="text-minty">
                   <option value="" >--Please choose an option--</option>
                   <option class="text-minty" value="dog">Dog</option>
                   <option class="text-minty" value="cat">Cat</option>
@@ -30,9 +32,9 @@
                 </select>
               </div>
 
-              <div class="form-group required">
+              <div >
                 <label for="description" class="form-label text-light">Description</label>
-                <textarea class="form-control text-minty" id="description" name="description" required></textarea>
+                <textarea class="form-control text-minty" id="description" name="description" ></textarea>
               </div>
 
               <div >
@@ -50,27 +52,27 @@
                 <textarea class="form-control text-minty" id="specialNeeds" name="specialNeeds"></textarea>
               </div>
 
-              <div class="form-group required">
+              <div>
                 <label for="forAdoption-select" class="form-label text-light pb-3 pt-3">For Adoption</label>
-                  <select name="forAdoption" id="forAdoption-select" class="text-minty" required>
+                  <select name="forAdoption" id="forAdoption-select" class="text-minty" >
                     <option value="" class="text-minty">--Please choose an option--</option>
                     <option class="text-minty" value="Yes">Yes</option>
                     <option class="text-minty" value="No">No</option>
                   </select>
               </div>
 
-              <div class="form-group required">
+              <div >
                 <label for="forFoster-select" class="form-label text-light pb-3">For Foster</label>
-                  <select name="forFoster" id="forFoster-select" class="text-minty" required>
+                  <select name="forFoster" id="forFoster-select" class="text-minty" >
                     <option value="" class="text-minty">--Please choose an option--</option>
                     <option class="text-minty" value="Yes">Yes</option>
                     <option class="text-minty" value="No">No</option>
                   </select>
               </div>
 
-              <div class="form-group required">
+              <div>
                 <label for="location" class="form-label text-light">Location</label>
-                  <select name="location" list="datalistOptions" id="location" class="text-minty" required>
+                  <select name="location" list="datalistOptions" id="location" class="text-minty" >
                   <datalist  id="datalistOptions">
                     <option class="text-minty" value="">--Please choose your location--</option>
                     <option class="text-minty" value="Alba">Alba</option>
@@ -120,22 +122,14 @@
                   <!-- end of location -->
               </div>
 
-              <div class="form-group required">
-                <label for="imgUpload" class="form-label text-light">Image</label>
-                <!-- allows to choose the file type = 'file' -->
-                <input type="file" class="form-control text-minty" id="imageUpload" name="file">
-              </div>
+        
               <div class="pt-3 d-flex justify-content-center ">
-                <button type="submit" class="btn btn-primary text-powder bg-minty fw-semibold " value="Upload">Submit</button>
+                <button type="submit" class="btn btn-primary text-powder bg-minty fw-semibold ">Edit</button>
             </div>  
           </form>
           </div>
       </div>
       
-      </div>  
-      <div class="form-group required  pt-4">
-        <label  class="control-label fw-bolder text-light">Required</label>
-      </div>
     </div>
       
     <!-- end div row -->

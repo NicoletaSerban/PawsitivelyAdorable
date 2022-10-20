@@ -12,6 +12,7 @@ module.exports = {
       console.log(err);
     }
   },
+
   // rateUser: async (req, res) => {
   //   try {
   //     await User.findOneAndUpdate(

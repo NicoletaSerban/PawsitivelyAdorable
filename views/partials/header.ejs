@@ -18,6 +18,11 @@
       crossorigin="anonymous"
     /> -->
     <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
@@ -72,19 +77,13 @@
               </li>
               <% if(!user) {%>
               <li class="nav-item">
-                <a class="nav-link text-powder" href="/signup">Sign Up</a>
+                <a class="nav-link text-powder" href="/signup">Register</a>
               </li>
               <% } else{%>
               <li class="nav-item">
                 <a href="/logout" class="nav-link text-powder">Logout</a>
               </li>
               <%} %>
-
-              <li class="nav-item">
-                <a class="nav-link text-powder" href="#contact"
-                  >Dark-Light mode</a
-                >
-              </li>
             </ul>
           </div>
         </div>

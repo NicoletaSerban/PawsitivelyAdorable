@@ -2,17 +2,21 @@
 
 <div class="container main">
   <div class="row">
-    <h2 class="text-center pt-4 text-greyblue"><%=animal.name%></h2>
+    <h2 class="text-center pt-4 text-peach"><%=animal.name%></h2>
     <div class="col-5">
       <img class="img-fluid pb-3" src="<%=animal.image%>" />
 
       <div class="d-flex gap-2 col-6 mx-auto pb-3">
         <!-- to appear ony btn  -->
         <% if(animal.forAdoption === 'Yes'){ %>
-        <button type="button" class="btn btn-info text-light">Adopt me</button>
+        <button type="button" class="btn-sm btn btn-info text-light">
+          Adopt me
+        </button>
 
         <% } %> <% if(animal.forFoster === 'Yes'){ %>
-        <button type="button" class="btn btn-info text-light">Foster me</button>
+        <button type="button" class="btn-sm btn btn-info text-light">
+          Foster me
+        </button>
         <% } %>
 
         <!-- end of btn -->
@@ -20,33 +24,22 @@
 
       <!-- end div pic -->
     </div>
+
     <div class="col-6">
-      <% if(animal.type === 'dog') {%>
-      <ul class="lh-lg fs-5 row list-unstyled pt-5 text-greyblue dog">
+      <ul class="lh-sm lh-lg fs-5 row list-unstyled pt-5 text-light">
         <li>Age: <%=animal.age%></li>
         <li>Type: <%=animal.type%></li>
         <li>Special Needs: <%=animal.specialNeeds%></li>
         <li>Posted date: <%=animal.postDate.toLocaleString()%></li>
-        <li>Posted by: <%=animal.createdByName%> - <%=user.role%></li>
+        <li>Posted by: <%=user.userName%></li>
       </ul>
-      <% } else{%>
-
-      <ul class="lh-lg fs-5 row list-unstyled pt-5 text-greyblue cat">
-        <li>Age: <%=animal.age%></li>
-        <li>Type: <%=animal.type%></li>
-        <li>Special Needs: <%=animal.specialNeeds%></li>
-        <li>Posted date: <%=animal.postDate.toLocaleString()%></li>
-        <li>Posted by: <%=animal.createdByName%> - <%=user.role%></li>
-      </ul>
-      <%} %>
-
       <!-- start rating -->
       <form
         action="/account/review"
         enctype="multipart/form-data"
         method="POST"
       >
-        <div class="rate text-greyblue text">
+        <div class="rate text-light text">
           <h5>Rate the user</h5>
 
           <input type="radio" id="star5" name="rate" value="5" />
@@ -74,21 +67,45 @@
     <div class="row row-cols-1 row-cols-md-2 g-4">
       <div class="card col p-2 mb-2 auto main">
         <div class="card-body">
-          <h3 class="text-greyblue">Description:</h3>
-          <p class="lead lh-base text-powder"><%=animal.description%></p>
+          <h3 class="text-peach">Description:</h3>
+          <p class="lead lh-base text-light"><%=animal.description%></p>
         </div>
         <!-- end div description -->
       </div>
 
       <div class="card col p-2 mb-2 auto main">
         <div class="card-body">
-          <h3 class="text-greyblue">Likes:</h3>
-          <p class="lead lh-base text-powder"><%=animal.likes%></p>
-          <h3 class="text-greyblue">Dislikes:</h3>
-          <p class="lh-base text-powder"><%=animal.dislikes%></p>
+          <h3 class="text-peach">Likes:</h3>
+          <p class="lead lh-base text-light"><%=animal.likes%></p>
+          <h3 class="text-peach">Dislikes:</h3>
+          <p class="lh-base text-light"><%=animal.dislikes%></p>
         </div>
 
         <!-- end div likes -->
+      </div>
+      <div class="d-flex justify-content-center">
+        <li class="col-6 justify-content-between mt-5">
+          <!-- to match the user logged with the createdBy -->
+          <% if(animal.createdByName == user._id){%>
+          <form
+            action="/account/deletePost/<%= post.id %>?_method=DELETE"
+            method="POST"
+          >
+            <button class="btn-sm btn btn-outline-danger" type="submit">
+              Delete
+            </button>
+          </form>
+          <form
+            action="/account/editPost/<%= post.id %>?_method=PUT"
+            method="POST"
+            class="col-3"
+          >
+            <button class="btn btn-powder btn-sm text-light" type="submit">
+              Edit
+            </button>
+          </form>
+          <%}%>
+        </li>
       </div>
     </div>
   </div>
