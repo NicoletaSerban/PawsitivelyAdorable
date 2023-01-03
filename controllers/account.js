@@ -63,24 +63,25 @@ module.exports = {
     }
   },
   editPost: async (req, res) => {
+    //iterate to see if the body is empty or not
+    Object.keys(req.body).forEach((key) => {
+      if (
+        req.body[key] == null ||
+        req.body[key] == undefined ||
+        req.body[key] == ""
+      ) {
+        delete req.body[key];
+      }
+    });
     try {
       await Post.findOneAndUpdate(
         { _id: req.params.id },
         {
-          name: req.body.name,
-          age: req.body.age,
-          type: req.body.type,
-          description: req.body.description,
-          likes: req.body.likes,
-          dislikes: req.body.dislikes,
-          specialNeeds: req.body.specialNeeds,
-          forAdoption: req.body.forAdoption,
-          forFoster: req.body.forFoster,
-          location: req.body.location,
+          $set: req.body,
         }
       );
       console.log("Post edited");
-      res.redirect(`/account/editPost/${req.params.id}`);
+      res.redirect(`/animal/${req.params.id}`);
     } catch (err) {
       console.log(err);
     }

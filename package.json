@@ -1,7 +1,7 @@
 {
-  "name": "adopt-me",
+  "name": "pawsitively-adorable",
   "version": "1.0.0",
-  "description": "Platform for adoption or foster different kind of animals",
+  "description": "Our  app is the perfect platform for individuals and families looking to adopt or foster animals in need and give them a loving home.",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",

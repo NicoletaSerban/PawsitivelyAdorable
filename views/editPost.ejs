@@ -1,139 +1,188 @@
 <%- include('partials/header') -%>
-<div class="container mx-auto main" style="width: 500px;">
+<div class="container mx-auto main" style="width: 500px">
   <div class="row">
+    <div>
       <div>
-    
-        <div>
-            <h2 class="text-peach pt-3 text-center">Edit</h2>
-          <form action=action="/account/editPost/<%= post.id%>?_method=PUT"
-            method="POST"
-            class="col-3">
-              <div class="mb-3">
-                  <label for="name" class="form-label text-light">Name</label>
-                  <input type="name" class="form-control" id="name" name="name">
-              </div>
-
-              <div >
-                <label for="age" class="form-label text-light" >Age</label>
-                <input type="age" class="form-control" id="age" name="age">
-              </div>
-
-              <div class=" pt-3 pb-3">
-                <label for="type-select" class="text-light">Choose a type:</label>
-                <select name="type" id="type-select" class="text-minty">
-                  <option value="" >--Please choose an option--</option>
-                  <option class="text-minty" value="dog">Dog</option>
-                  <option class="text-minty" value="cat">Cat</option>
-                  <option class="text-minty" value="cow">Cow</option>
-                  <option class="text-minty" value="horse">Horse</option>
-                  <option class="text-minty" value="goat">Goat</option>
-                  <option class="text-minty" value="pig">Pig</option>
-                  <option class="text-minty" value="others">Others</option>
-                </select>
-              </div>
-
-              <div >
-                <label for="description" class="form-label text-light">Description</label>
-                <textarea class="form-control text-minty" id="description" name="description" ></textarea>
-              </div>
-
-              <div >
-                <label for="likes" class="form-label text-light pt-3">Likes</label>
-                <textarea class="form-control text-minty" id="likes" name="likes"></textarea>
-              </div>
-
-              <div>
-                <label for="dislikes" class="form-label text-light pt-3">Dislikes</label>
-                <textarea class="form-control text-minty" id="dislikes" name="dislikes"></textarea>
-              </div>
-
-              <div>
-                <label for="specialNeeds" class="form-label text-light pt-3">Special Needs</label>
-                <textarea class="form-control text-minty" id="specialNeeds" name="specialNeeds"></textarea>
-              </div>
-
-              <div>
-                <label for="forAdoption-select" class="form-label text-light pb-3 pt-3">For Adoption</label>
-                  <select name="forAdoption" id="forAdoption-select" class="text-minty" >
-                    <option value="" class="text-minty">--Please choose an option--</option>
-                    <option class="text-minty" value="Yes">Yes</option>
-                    <option class="text-minty" value="No">No</option>
-                  </select>
-              </div>
-
-              <div >
-                <label for="forFoster-select" class="form-label text-light pb-3">For Foster</label>
-                  <select name="forFoster" id="forFoster-select" class="text-minty" >
-                    <option value="" class="text-minty">--Please choose an option--</option>
-                    <option class="text-minty" value="Yes">Yes</option>
-                    <option class="text-minty" value="No">No</option>
-                  </select>
-              </div>
-
-              <div>
-                <label for="location" class="form-label text-light">Location</label>
-                  <select name="location" list="datalistOptions" id="location" class="text-minty" >
-                  <datalist  id="datalistOptions">
-                    <option class="text-minty" value="">--Please choose your location--</option>
-                    <option class="text-minty" value="Alba">Alba</option>
-                    <option class="text-minty" value="Arad">Arad</option>
-                    <option class="text-minty" value="Arges">Arges</option>
-                    <option class="text-minty" value="Bacau">Bacau</option>
-                    <option class="text-minty" value="Bihor">Bihor</option>
-                    <option class="text-minty" value="Bistrita-Nasaud">Bistrita-Nasaud</option>
-                    <option class="text-minty" value="Botosani">Botosani</option>
-                    <option class="text-minty" value="Brasov">Brasov</option>
-                    <option class="text-minty" value="Braila">Braila</option>
-                    <option class="text-minty" value="Bucuresti">Bucuresti</option>
-                    <option class="text-minty" value="Buzau">Buzau</option>
-                    <option class="text-minty" value="Calarasi">Calarasi</option>
-                    <option class="text-minty" value="Caras - Severin">Caras - Severin</option>
-                    <option class="text-minty" value="Cluj">Cluj</option>
-                    <option class="text-minty" value="Constanta">Constanta</option>
-                    <option class="text-minty" value="Covasna">Covasna</option>
-                    <option class="text-minty" value="Dambovita">Dambovita</option>
-                    <option class="text-minty" value="Dolj">Dolj</option>
-                    <option class="text-minty" value="Galati">Galati</option>
-                    <option class="text-minty" value="Giurgiu">Giurgiu</option>
-                    <option class="text-minty" value="Gorj">Gorj</option>
-                    <option class="text-minty" value="Harghita">Harghita</option>
-                    <option class="text-minty" value="Hunedoara">Hunedoara</option>
-                    <option class="text-minty" value="Ialomita">Ialomita</option>
-                    <option class="text-minty" value="Iasi">Iasi</option>
-                    <option class="text-minty" value="Ilfov">Ilfov</option>
-                    <option class="text-minty" value="Maramures">Maramures</option>
-                    <option class="text-minty" value="Mehedinti">Mehedinti</option>
-                    <option class="text-minty" value="Mures">Mures</option>
-                    <option class="text-minty" value="Neamt">Neamt</option>
-                    <option class="text-minty" value="Olt">Olt</option>
-                    <option class="text-minty" value="Prahova">Prahova</option>
-                    <option class="text-minty" value="Salaj">Salaj</option>
-                    <option class="text-minty" value="Satu Mare">Satu Mare</option>
-                    <option class="text-minty" value="Sibiu">Sibiu</option>
-                    <option class="text-minty" value="Suceava">Suceava</option>
-                    <option class="text-minty" value="Teleorman">Teleorman</option>
-                    <option class="text-minty" value="Timis">Timis</option>
-                    <option class="text-minty" value="Tulcea">Tulcea</option>
-                    <option class="text-minty" value="Valcea">Valcea</option>
-                    <option class="text-minty" value="Vaslui">Vaslui</option>
-                    <option class="text-minty" value="Vrancea">Vrancea</option>
-                  </datalist>
-                  </select>
-                  <!-- end of location -->
-              </div>
-
-        
-              <div class="pt-3 d-flex justify-content-center ">
-                <button type="submit" class="btn btn-primary text-powder bg-minty fw-semibold ">Edit</button>
-            </div>  
-          </form>
+        <h2 class="text-peach pt-3 text-center">Edit</h2>
+        <form
+          action="/account/editPost/<%= post._id%>?_method=PUT"
+          method="POST"
+        >
+          <div class="mb-3">
+            <label for="name" class="form-label text-light">Name</label>
+            <input type="name" class="form-control" id="name" name="name" />
           </div>
+
+          <div>
+            <label for="age" class="form-label text-light">Age</label>
+            <input type="age" class="form-control" id="age" name="age" />
+          </div>
+
+          <div class="pt-3 pb-3">
+            <label for="type-select" class="text-light">Choose a type:</label>
+            <select name="type" id="type-select" class="text-minty">
+              <option value="">--Please choose an option--</option>
+              <option class="text-minty" value="dog">Dog</option>
+              <option class="text-minty" value="cat">Cat</option>
+              <option class="text-minty" value="cow">Cow</option>
+              <option class="text-minty" value="horse">Horse</option>
+              <option class="text-minty" value="goat">Goat</option>
+              <option class="text-minty" value="pig">Pig</option>
+              <option class="text-minty" value="others">Others</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="description" class="form-label text-light"
+              >Description</label
+            >
+            <textarea
+              class="form-control text-minty"
+              id="description"
+              name="description"
+            ></textarea>
+          </div>
+
+          <div>
+            <label for="likes" class="form-label text-light pt-3">Likes</label>
+            <textarea
+              class="form-control text-minty"
+              id="likes"
+              name="likes"
+            ></textarea>
+          </div>
+
+          <div>
+            <label for="dislikes" class="form-label text-light pt-3"
+              >Dislikes</label
+            >
+            <textarea
+              class="form-control text-minty"
+              id="dislikes"
+              name="dislikes"
+            ></textarea>
+          </div>
+
+          <div>
+            <label for="specialNeeds" class="form-label text-light pt-3"
+              >Special Needs</label
+            >
+            <textarea
+              class="form-control text-minty"
+              id="specialNeeds"
+              name="specialNeeds"
+            ></textarea>
+          </div>
+
+          <div>
+            <label
+              for="forAdoption-select"
+              class="form-label text-light pb-3 pt-3"
+              >For Adoption</label
+            >
+            <select
+              name="forAdoption"
+              id="forAdoption-select"
+              class="text-minty"
+            >
+              <option value="" class="text-minty">
+                --Please choose an option--
+              </option>
+              <option class="text-minty" value="Yes">Yes</option>
+              <option class="text-minty" value="No">No</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="forFoster-select" class="form-label text-light pb-3"
+              >For Foster</label
+            >
+            <select name="forFoster" id="forFoster-select" class="text-minty">
+              <option value="" class="text-minty">
+                --Please choose an option--
+              </option>
+              <option class="text-minty" value="Yes">Yes</option>
+              <option class="text-minty" value="No">No</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="location" class="form-label text-light">Location</label>
+            <select
+              name="location"
+              list="datalistOptions"
+              id="location"
+              class="text-minty"
+            >
+              <datalist id="datalistOptions">
+                <option class="text-minty" value="">
+                  --Please choose your location--
+                </option>
+                <option class="text-minty" value="Alba">Alba</option>
+                <option class="text-minty" value="Arad">Arad</option>
+                <option class="text-minty" value="Arges">Arges</option>
+                <option class="text-minty" value="Bacau">Bacau</option>
+                <option class="text-minty" value="Bihor">Bihor</option>
+                <option class="text-minty" value="Bistrita-Nasaud">
+                  Bistrita-Nasaud
+                </option>
+                <option class="text-minty" value="Botosani">Botosani</option>
+                <option class="text-minty" value="Brasov">Brasov</option>
+                <option class="text-minty" value="Braila">Braila</option>
+                <option class="text-minty" value="Bucuresti">Bucuresti</option>
+                <option class="text-minty" value="Buzau">Buzau</option>
+                <option class="text-minty" value="Calarasi">Calarasi</option>
+                <option class="text-minty" value="Caras - Severin">
+                  Caras - Severin
+                </option>
+                <option class="text-minty" value="Cluj">Cluj</option>
+                <option class="text-minty" value="Constanta">Constanta</option>
+                <option class="text-minty" value="Covasna">Covasna</option>
+                <option class="text-minty" value="Dambovita">Dambovita</option>
+                <option class="text-minty" value="Dolj">Dolj</option>
+                <option class="text-minty" value="Galati">Galati</option>
+                <option class="text-minty" value="Giurgiu">Giurgiu</option>
+                <option class="text-minty" value="Gorj">Gorj</option>
+                <option class="text-minty" value="Harghita">Harghita</option>
+                <option class="text-minty" value="Hunedoara">Hunedoara</option>
+                <option class="text-minty" value="Ialomita">Ialomita</option>
+                <option class="text-minty" value="Iasi">Iasi</option>
+                <option class="text-minty" value="Ilfov">Ilfov</option>
+                <option class="text-minty" value="Maramures">Maramures</option>
+                <option class="text-minty" value="Mehedinti">Mehedinti</option>
+                <option class="text-minty" value="Mures">Mures</option>
+                <option class="text-minty" value="Neamt">Neamt</option>
+                <option class="text-minty" value="Olt">Olt</option>
+                <option class="text-minty" value="Prahova">Prahova</option>
+                <option class="text-minty" value="Salaj">Salaj</option>
+                <option class="text-minty" value="Satu Mare">Satu Mare</option>
+                <option class="text-minty" value="Sibiu">Sibiu</option>
+                <option class="text-minty" value="Suceava">Suceava</option>
+                <option class="text-minty" value="Teleorman">Teleorman</option>
+                <option class="text-minty" value="Timis">Timis</option>
+                <option class="text-minty" value="Tulcea">Tulcea</option>
+                <option class="text-minty" value="Valcea">Valcea</option>
+                <option class="text-minty" value="Vaslui">Vaslui</option>
+                <option class="text-minty" value="Vrancea">Vrancea</option>
+              </datalist>
+            </select>
+            <!-- end of location -->
+          </div>
+
+          <div class="pt-3 d-flex justify-content-center">
+            <button
+              type="submit"
+              class="btn btn-primary text-powder bg-minty fw-semibold"
+            >
+              Edit
+            </button>
+          </div>
+        </form>
       </div>
-      
     </div>
-      
-    <!-- end div row -->
   </div>
-  <!-- end of container -->
+
+  <!-- end div row -->
 </div>
+<!-- end of container -->
 <%- include('partials/footer') -%>

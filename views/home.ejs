@@ -5,12 +5,10 @@
     <div class="row about">
       <div class="col-lg-8 col-md-10 mx-auto">
         <h1 class="text-center text-powder fw-bold">About site</h1>
-        <p class="lead text-light">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eligendi
-          eum natus suscipit magni nam. Eligendi minus ipsa illo, labore modi,
-          quas suscipit adipisci tenetur ab, numquam eveniet exercitationem
-          fugit.
+        <p class="lead text-powder fw-semibold indent">
+        Our web app connects animal lovers with shelters and rescue organizations in their area. Users can browse and search for adoptable or fosterable animals, and easily connect with the organization to begin the adoption or fostering process. The app also features resources and support for new pet parents, as well as a platform for sharing updates and photos of their furry friends.
         </p>
+        <p class="lead text-powder fw-bold text-center">Join us in giving these animals the loving homes they deserve!</p>
 
         <!-- Filter start -->
       <div class="container text-center">
@@ -44,7 +42,7 @@
           </select>
 
           <!-- start of location -->
-              <select class="col text-minty" name="location" list="datalistOptions" id="location">
+              <select class="col text-minty" name="location" list="datalistOptions" id="location" required>
               <datalist  id="datalistOptions">
                 <option value="">--Please choose your county--</option>
                 <option value="Alba">Alba</option>
@@ -93,7 +91,7 @@
               </select>
               <!-- end of location -->
 
-          <button type="submit" class="btn btn-outline-minty btn-md text-powder fw-semibold">Submit</button>
+          <button type="submit" class="btn btn-outline-greyblue btn-md text-powder fw-semibold">Submit</button>
         </form>
         <!-- end of row of filter dropdowns -->
       </div>
@@ -126,7 +124,7 @@
                     <li class="text-powder">Name: <%=post.name%></li>
                     <li class="text-powder">Type: <%=post.type%></li>
                     <li class="text-powder">Age: <%=post.age%></li>
-                    <li class="text-powder">Description: <%=post.description%></li>
+                    <li class="text-powder d-inline-block text-truncate">Description: <%=post.description%></li>
                     <li class="text-powder">Created by: <%=post.createdByName%></li>
                     <li class="text-powder">For Adoption: <%=post.forAdoption%> </li>
                     <li class="text-powder">For Foster: <%=post.forFoster%></li>

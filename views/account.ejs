@@ -59,22 +59,16 @@
                 <li><strong>Posted on</strong>: <%= post.postDate.toLocaleString() %></li>
               </ul>
             </a>
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-between">
               <form
                 action="/account/deletePost/<%= post.id %>?_method=DELETE"
                 method="POST"
-                class="col-3"
               >
                 <button class="btn btn-danger btn-sm text-light" type="submit">Delete</button>
               </form>
-              <form
-                action="/account/editPost/<%= post.id %>?_method=PUT"
-                method="POST"
-                class="col-3"
-              >
-                <button class="btn btn-powder btn-sm text-light" type="submit">Edit</button>
-              </form>
-              
+               <button type="button" class="btn btn-minty btn-sm text-light" type="submit"><a  href="/account/editPost/<%= post.id %>"
+                  class="text-decoration-none text-powder"
+                >Edit</a></button>
             </div>
           </li>
           <% } %>
