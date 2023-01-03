@@ -84,7 +84,7 @@
       </div>
     </div>
   </div>
-  <% if(user.id === animal.userId){%>
+  <% if(user.id == animal.userId){%>
   <form
     action="/account/deletePost/<%= animal.id %>?_method=DELETE"
     method="POST"

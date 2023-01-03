@@ -1,13 +1,13 @@
 const cloudinary = require("../middleware/cloudinary");
-const Post = require("../models/Animal");
-const User = require("../models/User");
+const Animal = require("../models/Animal");
+
 const Review = require("../models/Review");
 
 module.exports = {
   getProfile: async (req, res) => {
     try {
       // finding all the post with the associed id
-      const posts = await Post.find({ userId: req.user.id });
+      const posts = await Animal.find({ userId: req.user.id });
 
       // rendering profile page with the data from the DB
       res.render("account.ejs", { posts: posts, user: req.user });
@@ -55,9 +55,11 @@ module.exports = {
     }
   },
   getEdit: async (req, res) => {
+    const animal = await Animal.findById(req.params.id);
+    console.log(animal);
     try {
       // rendering profile page with the data from the DB
-      res.render("editPost.ejs", { user: req.user });
+      res.render("editPost.ejs", { user: req.user, animal: animal });
     } catch (err) {
       console.log(err);
     }
@@ -74,7 +76,7 @@ module.exports = {
       }
     });
     try {
-      await Post.findOneAndUpdate(
+      await Animal.findOneAndUpdate(
         { _id: req.params.id },
         {
           $set: req.body,
@@ -89,7 +91,7 @@ module.exports = {
 
   deletePost: async (req, res) => {
     try {
-      let animalPost = await Post.findById({ _id: req.params.id });
+      let animalPost = await Animal.findById({ _id: req.params.id });
 
       // delete img from cloudinary
 
