@@ -10,9 +10,8 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 //Main Routes - simplified for now
 router.get("/", homeController.getMain);
 router.get("/user/:id", homeController.getUser);
-// router.get("/user/rating/:id", ensureAuth, homeController.getRating);
-// router.post("/user/rating/:id", ensureAuth, homeController.addRating);
-// router.put("/rating/:id", animalController.rateUser);
+router.put("/user/rate/:id", ensureAuth, homeController.getRate);
+router.put("/user/reported/:id", ensureAuth, homeController.getReported);
 router.get("/login", authController.getLogin);
 router.post("/login", authController.postLogin);
 router.get("/logout", authController.logout);

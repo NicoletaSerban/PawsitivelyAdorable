@@ -20,42 +20,32 @@ module.exports = {
       console.log(err);
     }
   },
-  // getRating: async (req, res) => {
-  //   // Calculate the average rating
-  //   try {
-  //     // insert the new rating into the database
-  //     const insert = await Review.insertOne({
-  //       userId: req.params.id,
-  //       stars: req.body.rate,
-  //     });
-  //     res.render("user.ejs", { user: req.user });
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // },
-  // addRating: async (req, res) => {
-  //   const ratings = await Review.find({ userId: req.params.id });
-
-  //   // calculate the average rating
-  //   const averageRating =
-  //     ratings.reduce((acc, rating) => acc + rating.stars, 0) / ratings.length;
-
-  //   console.log(averageRating);
-
-  //   // render the average rating in the EJS template
-  //   res.render("user.ejs", { averageRating: averageRating });
-  // },
-  // rateUser: async (req, res) => {
-  //   try {
-  //     await User.findOneAndUpdate(
-  //       { _id: req.params.id },
-  //       {
-  //         // increment proprety likes by one
-  //         $set: {
-  //           rating:
-  //         }
-  //       }
-  //     )
-  //   }
-  // }
+  getRate: async (req, res) => {
+    try {
+      await User.findOneAndUpdate(
+        { _id: req.params.id },
+        {
+          $inc: { rating: 1 },
+        }
+      );
+      console.log("Adorable +1");
+      res.redirect(`/user/${req.params.id}`);
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getReported: async (req, res) => {
+    try {
+      await User.findOneAndUpdate(
+        { _id: req.params.id },
+        {
+          $inc: { reported: 1 },
+        }
+      );
+      console.log("Reported +1");
+      res.redirect(`/user/${req.params.id}`);
+    } catch (err) {
+      console.log(err);
+    }
+  },
 };

@@ -16,47 +16,38 @@
             <ul class="list-unstyled text-light">
             <li><strong>Email</strong>: <%= user.email %></li>
             <li><strong>Role</strong>: <%= user.role %></li>
-            <li><strong> Rating</strong>: <%= user.rating %></li>
+            <li><strong>Adorable</strong>: <%= user.rating %></li>
             <li><strong>Reported</strong>: <%= user.reported %></li>
-            <li><!-- start rating -->
+            <li><strong>
               <form
-                action="/account/review"
-                enctype="multipart/form-data"
+                action="/user/rate/<%= user.id %>?_method=PUT"
                 method="POST"
               >
-                <div class="rate text-light text">
-                  <h5>Rate the user</h5>
-        
-                  <input type="radio" id="star5" name="rate" value="5" />
-                  <label for="star5" title="text">5 stars</label>
-                  <input type="radio" id="star4" name="rate" value="4" />
-                  <label for="star4" title="text">4 stars</label>
-                  <input type="radio" id="star3" name="rate" value="3" />
-                  <label for="star3" title="text">3 stars</label>
-                  <input type="radio" id="star2" name="rate" value="2" />
-                  <label for="star2" title="text">2 stars</label>
-                  <input type="radio" id="star1" name="rate" value="1" />
-                  <label for="star1" title="text">1 star</label>
-        
-                  <!-- end form rating -->
-        
-                  <!-- end div rate -->
-                </div>
-                <!-- <button class="btn btn-primary" type="submit">Submit</button> -->
+              <li>Adorable?<button class="btn" type="submit"> <i class="fas fa-paw"></i>
+              </button>
+            </li>
+              </form>
+            </li>
+            <li><strong>
+              <form
+                action="/user/reported/<%= user.id %>?_method=PUT"
+                method="POST"
+              >
+              <li>Report user:<button class="btn" type="submit"> <i class="fas fa-frown"></i>
+              </button>
+            </li>
               </form>
             </li>
           </ul>
           
         </p>
         </div>
-        
         <!-- end div profile -->
       </div>
-    
     </div>
 
     <!-- my post starts -->
-      <h2 class="text-center pt-4 text-powder"><%=user.userName%> posts</h2>
+      <h2 class="text-center pt-4 text-powder"><%=user.userName%>'s posts</h2>
       <div class="col-5 section-bg">
         <ul class="row list-unstyled text-center" >
           <% for(post of posts) {%>
