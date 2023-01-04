@@ -61,12 +61,12 @@
             </a>
             <div class="d-flex justify-content-between">
               <form
-                action="/account/deletePost/<%= post.id %>?_method=DELETE"
+                action="/animal/deleteAnimal/<%=post.id%>?_method=DELETE"
                 method="POST"
               >
                 <button class="btn btn-danger btn-sm text-light" type="submit">Delete</button>
               </form>
-               <button type="button" class="btn btn-minty btn-sm text-light" type="submit"><a  href="/account/editPost/<%= post.id %>"
+               <button type="button" class="btn btn-minty btn-sm text-light" type="submit"><a  href="/animal/editPost/<%=post.id%>"
                   class="text-decoration-none text-powder"
                 >Edit</a></button>
             </div>

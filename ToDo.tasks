@@ -1,0 +1,54 @@
+Titlu: la final sa fie : (doua puncte)
+Sa creezi un task: ctr + enter
+Task completat: alt + d
+Task anulat: alt + c
+Labeluri: @ si alegi ce vrei
+
+Controller modified:
+    ✔ @today @done (1/4/2023, 12:33:52 PM)
+    ✔ Move the routes from account to animals @done (1/4/2023, 12:23:30 PM)
+    ✔ Edit btn @done (1/4/2023, 12:23:54 PM)
+    ✔ Delete btn @done (1/4/2023, 12:32:37 PM)
+    ✔ Change the controller name in routes @done (1/4/2023, 12:33:36 PM)
+    ✔ Move controllers from account to animals @done (1/4/2023, 12:33:39 PM)
+
+Created by:
+    ☐ @critical 
+    ☐ Create a new page for user
+    ☐ Add hyperlink to post createdBy
+    ☐ Chage the rating from animal to the new page of user
+
+Tips & tricks for first time owners:
+    ☐ @critical 
+    ☐ Create the routes
+    ☐ Create the controller
+    ☐ Add in server.js
+
+
+Add section for pictures from adopters: 
+    ☐ @high 
+
+
+Newspaper: 
+    ☐ @low
+    ☐ Background paper
+    ☐ Page layout colums 
+
+Dark-theme:
+    ☐ @low 
+
+
+API:
+    ☐ @critical 
+    ☐ Create new API
+    ☐ Add new info
+    ☐ Add the ApI to my project
+
+Other stuff to add:
+    ☐ change the name from adopt-me to new name in package.json @today 
+    ☐ add description to project @today 
+    ☐ add Readme.md @critical 
+    ☐ host the app @critical 
+    ☐ make gif of project @critical 
+    ☐ Add new posts @low 
+    
