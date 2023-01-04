@@ -16,7 +16,8 @@
   padding: 0;
 }
 .rate {
-  float: left;
+  display: inline-block;
+  /* float: left; */
   height: 46px;
   padding: 0 10px;
 }

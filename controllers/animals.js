@@ -7,7 +7,6 @@ module.exports = {
     try {
       // finding all the post with the associed id
       const animal = await Animal.findById(req.params.id);
-
       res.render("animals.ejs", { animal: animal, user: req.user });
     } catch (err) {
       console.log(err);
@@ -15,7 +14,7 @@ module.exports = {
   },
   getEdit: async (req, res) => {
     const animal = await Animal.findById(req.params.id);
-    console.log(animal);
+
     try {
       // rendering profile page with the data from the DB
       res.render("editPost.ejs", { user: req.user, animal: animal });
@@ -64,18 +63,4 @@ module.exports = {
       res.redirect("/account");
     }
   },
-
-  // rateUser: async (req, res) => {
-  //   try {
-  //     await User.findOneAndUpdate(
-  //       { _id: req.params.id },
-  //       {
-  //         // increment proprety likes by one
-  //         $set: {
-  //           rating:
-  //         }
-  //       }
-  //     )
-  //   }
-  // }
 };

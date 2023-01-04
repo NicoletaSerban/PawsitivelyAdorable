@@ -9,5 +9,5 @@ router.get("/:id", ensureAuth, animalController.getAnimals);
 router.delete("/deleteAnimal/:id", animalController.deleteAnimal);
 router.get("/editPost/:id", ensureAuth, animalController.getEdit);
 router.put("/editPost/:id", animalController.editPost);
-// router.put("/rating/:id", animalController.rateUser);
+
 module.exports = router;

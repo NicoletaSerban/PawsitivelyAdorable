@@ -13,11 +13,6 @@ const ReviewSchema = new mongoose.Schema({
     // referred to User form our models
     ref: "User",
   },
-
-  ratingDate: {
-    type: Date,
-    default: Date.now,
-  },
 });
 
 module.exports = mongoose.model("Review", ReviewSchema);

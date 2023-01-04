@@ -30,34 +30,9 @@
         <li>Special Needs: <%=animal.specialNeeds%></li>
         <li>Location: <%=animal.location%></li>
         <li>Posted date: <%=animal.postDate.toLocaleString()%></li>
-        <li>Posted by: <%=animal.createdByName%></li>
+        <li>Posted by:  <a href="/user/<%=animal.userId%>"> <%=animal.createdByName%><a></li>
       </ul>
-      <!-- start rating -->
-      <form
-        action="/account/review"
-        enctype="multipart/form-data"
-        method="POST"
-      >
-        <div class="rate text-light text">
-          <h5>Rate the user</h5>
-
-          <input type="radio" id="star5" name="rate" value="5" />
-          <label for="star5" title="text">5 stars</label>
-          <input type="radio" id="star4" name="rate" value="4" />
-          <label for="star4" title="text">4 stars</label>
-          <input type="radio" id="star3" name="rate" value="3" />
-          <label for="star3" title="text">3 stars</label>
-          <input type="radio" id="star2" name="rate" value="2" />
-          <label for="star2" title="text">2 stars</label>
-          <input type="radio" id="star1" name="rate" value="1" />
-          <label for="star1" title="text">1 star</label>
-
-          <!-- end form rating -->
-
-          <!-- end div rate -->
-        </div>
-        <!-- <button class="btn btn-primary" type="submit">Submit</button> -->
-      </form>
+      
     </div>
     <!-- end of div row -->
   </div>
@@ -84,6 +59,7 @@
       </div>
     </div>
   </div>
+ 
   <% if(user.id == animal.userId){%>
   <form
     action="/animal/deleteAnimal/<%=animal.id%>?_method=DELETE"
@@ -98,6 +74,7 @@
   <button class="btn btn-powder btn-sm text-light" type="submit">
     <a href="/animal/editPost/<%=animal.id%>" class="col-3">Edit </a>
   </button>
+  
   <%}%>
   <!-- end of div container -->
 </div>

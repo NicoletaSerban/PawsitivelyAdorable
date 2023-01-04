@@ -5,10 +5,14 @@ const filterController = require("../controllers/filter");
 const homeController = require("../controllers/home");
 
 // const postsController = require("../controllers/profile");
-// const { ensureAuth, ensureGuest } = require("../middleware/auth");
+const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 //Main Routes - simplified for now
 router.get("/", homeController.getMain);
+router.get("/user/:id", homeController.getUser);
+// router.get("/user/rating/:id", ensureAuth, homeController.getRating);
+// router.post("/user/rating/:id", ensureAuth, homeController.addRating);
+// router.put("/rating/:id", animalController.rateUser);
 router.get("/login", authController.getLogin);
 router.post("/login", authController.postLogin);
 router.get("/logout", authController.logout);

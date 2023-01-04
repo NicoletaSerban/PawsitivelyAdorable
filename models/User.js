@@ -11,7 +11,8 @@ const UserSchema = new mongoose.Schema({
     required: true,
   },
   rating: {
-    type: Number,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Review",
     default: 0,
   },
   reported: {

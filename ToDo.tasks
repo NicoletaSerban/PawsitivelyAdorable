@@ -14,9 +14,13 @@ Controller modified:
 
 Created by:
     ☐ @critical 
-    ☐ Create a new page for user
-    ☐ Add hyperlink to post createdBy
-    ☐ Chage the rating from animal to the new page of user
+    ✔ Create a new page for user @done (1/4/2023, 2:22:45 PM)
+    ✔ Add hyperlink to post createdBy @done (1/4/2023, 2:22:48 PM)
+    ✔ Chage the rating from animal to the new page of user @done (1/4/2023, 4:42:53 PM)
+
+    Working review:
+    ☐ @critical    
+    ☐ make it work 
 
 Tips & tricks for first time owners:
     ☐ @critical 
@@ -51,4 +55,5 @@ Other stuff to add:
     ☐ host the app @critical 
     ☐ make gif of project @critical 
     ☐ Add new posts @low 
+    ☐ How to make desciption shorter in home @critical 
     

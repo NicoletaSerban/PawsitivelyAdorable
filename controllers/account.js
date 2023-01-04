@@ -31,7 +31,7 @@ module.exports = {
       });
 
       // create a new post in Db using our post model
-      await Post.create({
+      await Animal.create({
         name: req.body.name,
         age: req.body.age,
         type: req.body.type,
@@ -48,7 +48,7 @@ module.exports = {
         postDate: req.body.postDate,
         userId: req.user.id,
       });
-      console.log("Post has been added!");
+      console.log("Animal has been added!");
       res.redirect("/");
     } catch (err) {
       console.log(err);
