@@ -8,9 +8,7 @@ const { ensureAuth } = require("../middleware/auth");
 router.get("/", ensureAuth, accountController.getProfile);
 router.get("/createPost", ensureAuth, accountController.getPost);
 router.post("/createPost", upload.single("file"), accountController.createPost);
-router.delete("/deletePost/:id", accountController.deletePost);
-router.get("/editPost/:id", ensureAuth, accountController.getEdit);
-router.put("/editPost/:id", accountController.editPost);
+
 // router.post("/review/:id", accountController.getReview);
 // router.get("/createAvatar", ensureAuth, accountController.getAvatar);
 

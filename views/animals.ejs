@@ -86,7 +86,7 @@
   </div>
   <% if(user.id == animal.userId){%>
   <form
-    action="/account/deletePost/<%= animal.id %>?_method=DELETE"
+    action="/animal/deleteAnimal/<%=animal.id%>?_method=DELETE"
     method="POST"
     class="col-3"
   >
@@ -96,7 +96,7 @@
   </form>
 
   <button class="btn btn-powder btn-sm text-light" type="submit">
-    <a href="/account/editPost/<%= animal.id %>" class="col-3">Edit </a>
+    <a href="/animal/editPost/<%=animal.id%>" class="col-3">Edit </a>
   </button>
   <%}%>
   <!-- end of div container -->
