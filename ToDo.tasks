@@ -18,9 +18,10 @@ Created by:
     ✔ Add hyperlink to post createdBy @done (1/4/2023, 2:22:48 PM)
     ✔ Chage the rating from animal to the new page of user @done (1/4/2023, 4:42:53 PM)
 
-    Working review:
+    Change review:
     ☐ @critical    
-    ☐ make it work 
+    ✔ Change with reputation @done (1/4/2023, 6:46:25 PM)
+    ✔ Icon a paw @done (1/4/2023, 6:46:28 PM)
 
 Tips & tricks for first time owners:
     ☐ @critical 
@@ -49,11 +50,12 @@ API:
     ☐ Add the ApI to my project
 
 Other stuff to add:
-    ☐ change the name from adopt-me to new name in package.json @today 
-    ☐ add description to project @today 
+    ✔ change the name from adopt-me to new name in package.json @today @done (1/5/2023, 2:41:04 PM)
+    ✔ add description to project @today @done (1/5/2023, 2:41:07 PM)
     ☐ add Readme.md @critical 
     ☐ host the app @critical 
     ☐ make gif of project @critical 
     ☐ Add new posts @low 
     ☐ How to make desciption shorter in home @critical 
+    ☐ A user cad give only one adorable or just one report
     

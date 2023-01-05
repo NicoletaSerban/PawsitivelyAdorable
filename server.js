@@ -12,6 +12,7 @@ const mainRoutes = require("./routes/main");
 const accountRoutes = require("./routes/account");
 const animalRoutes = require("./routes/animal");
 const newspaperRoutes = require("./routes/newspaper");
+const tipsRoutes = require("./routes/tips");
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -60,6 +61,7 @@ app.use("/", mainRoutes);
 app.use("/account", accountRoutes);
 app.use("/animal", animalRoutes);
 app.use("/newspaper", newspaperRoutes);
+app.use("/tips&tricks", tipsRoutes);
 
 //Server Running
 app.listen(process.env.PORT, () => {
