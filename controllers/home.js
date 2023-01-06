@@ -4,9 +4,17 @@ const Review = require("../models/Review");
 
 module.exports = {
   getMain: async (req, res) => {
-    const feed = await Animal.find().sort({ postDate: "desc" }).lean();
+    Animal.find({})
+      .then((feeds) => {
+        // Shuffle the array of posts using the sort() method
+        const feed = feeds.sort(() => 0.5 - Math.random());
 
-    res.render("home.ejs", { feed: feed, user: req.user });
+        res.render("home.ejs", { feeds: feed, user: req.user });
+      })
+      .catch((err) => {
+        console.error(err);
+        res.status(500).send("Error fetching posts");
+      });
   },
   getUser: async (req, res) => {
     try {
