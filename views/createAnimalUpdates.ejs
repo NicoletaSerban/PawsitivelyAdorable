@@ -1,0 +1,58 @@
+<%- include('partials/header') -%>
+<div class="container mx-auto main" style="width: 500px;">
+  <div class="row">
+      <div>
+    
+        <div>
+            <h2 class="text-peach pt-3 text-center">Create an update</h2>
+          <form action="/animalUpdates/createAnimalUpdates" enctype="multipart/form-data" method="POST">
+              <div class="mb-3 form-group required">
+                  <label for="name" class="form-label text-light">Name</label>
+                  <input type="text" class="form-control" id="name" name="name" required>
+              </div>
+
+              <div class="form-group required">
+                <label for="updates" class="form-label text-light">Updates</label>
+                <textarea class="form-control text-minty" id="updates" name="updates"></textarea>
+              </div>
+
+              <div >
+                <label for="struggles" class="form-label text-light pt-3">Struggles</label>
+                <textarea class="form-control text-minty" id="struggles" name="struggles"></textarea>
+              </div>
+
+            
+              <div class="mb-3 form-group required">
+                <label for="adoptedByName" class="form-label text-light">Adopted by:</label>
+                <input type="text" class="form-control" id="adoptedByName" name="adoptedByName">
+            </div>
+
+            <div class="mb-3 form-group required">
+                <label for="takeAwayDate" class="form-label text-light">Adopted date:</label>
+                <input type="date" class="form-control" id="takeAwayDate" name="takeAwayDate">
+            </div>
+
+            <div class="form-group required">
+                <label for="imgUpload" class="form-label text-light">Image</label>
+                <!-- allows to choose the file type = 'file' -->
+                <input type="file" class="form-control text-minty" id="imageUpload" name="file">
+                
+              </div>
+              <div class="pt-3 d-flex justify-content-center ">
+                <button type="submit" class="btn btn-primary text-powder bg-minty fw-semibold " value="Upload">Submit</button>
+            </div>  
+          </form>
+          </div>
+      </div>
+      
+      </div>  
+      <div class="form-group required  pt-4">
+        <label  class="control-label fw-bolder text-light">Required</label>
+      </div>
+    </div>
+      
+    <!-- end div row -->
+  </div>
+  <!-- end of container -->
+</div>
+<%- include('partials/footer') -%>

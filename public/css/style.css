@@ -192,7 +192,7 @@ a {
 }
 
 /* description length */
-.fifty-chars {
+.text-truncate {
   /* max-height: 6rem; */
   -webkit-box-orient: vertical;
   display: block;

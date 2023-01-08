@@ -1,0 +1,65 @@
+<%- include('partials/header') -%>
+<div class="container main">
+  <div class="col-lg-10 col-md-12 mx-auto">
+    <div class="row">
+      <h2 class="text-center p-4">Pets Updates & Photos</h2>
+      <!-- title div -->
+    </div>
+    <div class="row pb-2 text-powder">
+      This page is dedicated to showcasing the wonderful pets that have been
+      adopted into loving homes. Whether you have a cute and cuddly kitten, a
+      playful and energetic dog, or a exotic and mysterious reptile, we want to
+      see them! Feel free to post about your pets' daily activities, health
+      updates, and accomplishments, as well as share adorable photos of them.
+      This is a great place to connect with other pet owners who have adopted
+      their pets, share tips and advice, and show off your furry (or scaly, or
+      feathered) friends.
+    </div>
+    <div class="d-flex justify-content-center pb-3">
+      <button type="button" class="btn btn-outline-powder btn-lg fw-semibold">
+        <a
+          href="/animalUpdates/createAnimalUpdates"
+          class="text-decoration-none text-light"
+          >Create Update Post
+        </a>
+      </button>
+      <!-- btn div -->
+    </div>
+
+    <!-- end of div post -->
+  </div>
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4 pb-2">
+      <% for(pets of pet) {%>
+
+      <div class="col">
+        <div class="card text-bg-powder h-60">
+          <img src="<%=pets.image%>" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title text-center"><%=pets.name%></h5>
+            <p class="card-text text-light">Brief updates:</p>
+            <p>
+              <span><%= pets.updates %></span>
+            </p>
+
+            <p class="card-text text-light">Struggles:</p>
+            <span><%=pets.struggles%></span>
+          </div>
+          <div class="card-footer">
+            <ul class="list-unstyled">
+              <li class="d-inline-block mx-4">
+                <small> Adopted by: <%=pets.adoptedByName%></small>
+              </li>
+              <li class="d-inline-block mx-2">
+                <small> On date: <%=pets.takeAwayDate.toLocaleString()%></small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') -%>
