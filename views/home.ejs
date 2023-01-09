@@ -1,6 +1,7 @@
 <%- include('partials/header') -%>
 
 <div class="container main">
+  <!-- start of first section -->
   <div class="py-5 text center container">
     <div class="row about">
       <div class="col-lg-8 col-md-10 mx-auto">
@@ -10,8 +11,8 @@
         </p>
         <p class="lead text-powder fw-bold text-center">Join us in giving these animals the loving homes they deserve!</p>
 
-        <!-- Filter start -->
-      <div class="container text-center">
+        <!-- Filter section start -->
+        <div class="container text-center">
         <h2 class="text-powder">Filter</h2>
         <div class="row align-items-start">
         <form action="/filter?_method=GET" method="POST">
@@ -27,14 +28,12 @@
             <option value="others">Othe</option>
           </select>
       
-         
           <select  class="col text-minty" name="forAdoption" id="forAdoption" >
             <option value="">For Adoption</option>
             <option value="Yes">Yes</option>
             <option value="No">No</option>
           </select>
-    
-
+  
           <select  class="col text-minty" name="forFoster" id="forFoster">
             <option value="">For Foster</option>
             <option value="Yes">Yes</option>
@@ -104,6 +103,8 @@
     </div>
     <!-- end of about -->
   </div>
+
+  <!-- creat post btn  -->
   <div class="d-flex justify-content-center">
        
     <button type="button" class="btn btn-outline-powder  btn-lg fw-semibold">
@@ -111,16 +112,16 @@
         >Create Post
       </a>
     </button>
-  
   </div>
-  <!-- post start -->
+
+  <!-- posts start -->
   <div class="post py-5">
     <div class="container">
       
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <% for(post of feeds) {%>
           <a href="/animal/<%=post._id%>" class="text-decoration-none"> 
-        <div class="col">
+          <div class="col">
           
           <div class="card shadow-sm">
               
@@ -143,24 +144,25 @@
                 
                 <!-- end of div card-body -->
               </div>
-              <!-- end of div card -->
-            
+
+           <!-- end of div card -->
           </div>
           
           <!-- end of div col -->
         </div>
       </a>
         <% } %>
+
         <!-- end of div row -->
       </div>
+
       <!-- end of div container -->
     </div>
     
-     
     <!-- end of div post -->
   </div>
   
-  
+  <!-- end container main -->
 </div>
 
 <%- include('partials/footer') -%>

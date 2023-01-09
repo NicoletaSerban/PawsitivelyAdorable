@@ -4,6 +4,8 @@
     <div>
       <div>
         <h2 class="text-peach pt-3 text-center">Edit</h2>
+
+        <!-- start of edit form -->
         <form
           action="/animal/editPost/<%=animal.id%>?_method=PUT"
           method="POST"
@@ -53,7 +55,7 @@
               id="description"
               name="description"
             >
-<%- animal.description %></textarea
+ <%- animal.description %></textarea
             >
           </div>
 
@@ -64,6 +66,7 @@
             >
           </div>
 
+          <!-- dislikes input -->
           <div>
             <label for="dislikes" class="form-label text-light pt-3"
               >Dislikes</label
@@ -73,10 +76,11 @@
               id="dislikes"
               name="dislikes"
             >
-<%=animal.dislikes%></textarea
+ <%=animal.dislikes%></textarea
             >
           </div>
 
+          <!-- forAdoption input -->
           <div>
             <label
               for="forAdoption-select"
@@ -96,6 +100,7 @@
             </select>
           </div>
 
+          <!-- forFoster input -->
           <div>
             <label for="forFoster-select" class="form-label text-light pb-3"
               >For Foster</label
@@ -109,6 +114,7 @@
             </select>
           </div>
 
+          <!-- location input -->
           <div>
             <label for="location" class="form-label text-light">Location</label>
             <select
@@ -172,6 +178,7 @@
             <!-- end of location -->
           </div>
 
+          <!-- submit btn -->
           <div class="pt-3 d-flex justify-content-center">
             <button
               type="submit"
@@ -180,12 +187,16 @@
               Edit
             </button>
           </div>
+
+          <!-- end of edit form -->
         </form>
       </div>
     </div>
+
+    <!-- end div row -->
   </div>
 
-  <!-- end div row -->
+  <!-- end of container -->
 </div>
-<!-- end of container -->
+
 <%- include('partials/footer') -%>

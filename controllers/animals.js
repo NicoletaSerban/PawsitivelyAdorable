@@ -52,7 +52,6 @@ module.exports = {
       let animalPost = await Animal.findById({ _id: req.params.id });
 
       // delete img from cloudinary
-
       await cloudinary.uploader.destroy(animalPost.cloudinaryId);
 
       // Delete post from db

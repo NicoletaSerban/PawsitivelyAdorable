@@ -54,14 +54,4 @@ module.exports = {
       console.log(err);
     }
   },
-
-  // getReview: async (req, res) => {
-  //   try {
-  //     const review = await Review.findById(req.params.id);
-  //     // rendering profile page with the data from the DB
-  //     res.render("animals.ejs", { user: req.user, reviews: review });
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // },
 };

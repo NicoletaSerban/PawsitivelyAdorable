@@ -1,8 +1,10 @@
 <%- include('partials/header') -%>
 <div class="container main">
   <div class="row">
+
     <!-- start div for page buttons -->
     <div class="col-7 mx-auto">
+
       <!-- start of buttons -->
       <div>
         <ul class="nav nav-tabs">
@@ -21,9 +23,10 @@
             <a class="nav-link text-peach fw-semibold" href="/">Main Page</a>
           </li>
         </ul>
-      </div>
-      <!-- end buttons -->
 
+        <!-- end buttons -->
+      </div>
+      
       <!-- start myprofile page -->
       <div class="card pt-5" style="background-image:url(/imgs/back2.png)" >
         <div class="card-img-top row" alt="...">
@@ -40,8 +43,10 @@
             <li><strong>Reported</strong>: <%= user.reported %></li>
           </ul>
         </p>
+
         </div>
         <!-- end div myprofile -->
+        
       </div>
       <!-- end div for page buttons-->
     </div>
@@ -66,20 +71,22 @@
               >
                 <button class="btn btn-danger btn-sm text-light" type="submit">Delete</button>
               </form>
-               <button type="button" class="btn btn-minty btn-sm text-light" type="submit"><a  href="/animal/editPost/<%=post.id%>"
+               <button type="button" class="btn btn-minty btn-sm text-light px-4" type="submit"><a  href="/animal/editPost/<%=post.id%>"
                   class="text-decoration-none text-powder"
                 >Edit</a></button>
             </div>
           </li>
           <% } %>
         </ul>
+
         <!-- end div my posts -->
       </div>
 
       <!-- end div row -->
     </div>
-    <!-- end div container -->
+
+    <!-- end main container -->
   </div>
  
-</div>
+
 <%- include('partials/footer') -%>

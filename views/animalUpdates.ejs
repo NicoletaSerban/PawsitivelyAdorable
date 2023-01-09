@@ -15,6 +15,7 @@
       their pets, share tips and advice, and show off your furry (or scaly, or
       feathered) friends.
     </div>
+
     <div class="d-flex justify-content-center pb-3">
       <button type="button" class="btn btn-outline-powder btn-lg fw-semibold">
         <a
@@ -23,15 +24,18 @@
           >Create Update Post
         </a>
       </button>
-      <!-- btn div -->
+
+      <!-- end of update btn -->
     </div>
 
     <!-- end of div post -->
   </div>
+
+  <!-- start of posts -->
   <div class="container">
     <div class="row row-cols-1 row-cols-md-3 g-4 pb-2">
+      <!-- loop through all the updates and show the posts -->
       <% for(pets of pet) {%>
-
       <div class="col">
         <div class="card text-bg-powder h-60">
           <img src="<%=pets.image%>" class="card-img-top" alt="..." />
@@ -58,8 +62,14 @@
         </div>
       </div>
       <% } %>
+
+      <!-- end of posts rows -->
     </div>
+
+    <!-- end of posts -->
   </div>
+
+  <!-- end of main container -->
 </div>
 
 <%- include('partials/footer') -%>

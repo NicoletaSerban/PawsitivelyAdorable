@@ -2,6 +2,7 @@ const cloudinary = require("../middleware/cloudinary");
 const User = require("../models/User");
 const Pet = require("../models/animalUpdates");
 const Animal = require("../models/Animal");
+
 module.exports = {
   getAnimalUpdates: async (req, res) => {
     const pet = await Pet.find().sort({ takeAwayDate: "desc" });

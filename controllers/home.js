@@ -6,7 +6,7 @@ module.exports = {
   getMain: async (req, res) => {
     Animal.find({})
       .then((feeds) => {
-        // Shuffle the array of posts using the sort() method
+        // Shuffle the array of posts using the sort() method so the posts appears random
         const feed = feeds.sort(() => 0.5 - Math.random());
 
         res.render("home.ejs", { feeds: feed, user: req.user });

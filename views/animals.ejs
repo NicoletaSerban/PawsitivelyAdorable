@@ -3,11 +3,13 @@
 <div class="container main">
   <div class="row">
     <h2 class="text-center pt-4 text-peach"><%=animal.name%></h2>
+
+    <!-- start of first section -->
     <div class="col-5">
       <img class="img-fluid pb-3" src="<%=animal.image%>" />
 
       <div class="d-flex gap-2 col-6 mx-auto pb-3">
-        <!-- to appear only btn  -->
+        <!-- to appear only btn that has "Yes"  -->
         <% if(animal.forAdoption === 'Yes'){ %>
         <button type="button" class="btn-sm btn btn-info text-light">
           Adopt me
@@ -20,9 +22,11 @@
         <% } %>
         <!-- end of btn -->
       </div>
+
       <!-- end div pic -->
     </div>
 
+    <!-- start of info section -->
     <div class="col-6">
       <ul class="lh-sm lh-lg fs-5 row list-unstyled pt-5 text-light">
         <li>Age: <%=animal.age%></li>
@@ -32,21 +36,26 @@
         <li>Posted date: <%=animal.postDate.toLocaleString()%></li>
         <li>Posted by:  <a href="/user/<%=animal.userId%>"> <%=animal.createdByName%><a></li>
       </ul>
-      
+
+      <!-- end of info section -->
     </div>
-    <!-- end of div row -->
+
+    <!-- end of first section -->
   </div>
 
   <div class="container">
     <div class="row row-cols-1 row-cols-md-2 g-4">
+
+      <!-- start of description card -->
       <div class="card col p-2 mb-2 auto main">
         <div class="card-body">
           <h3 class="text-peach">Description:</h3>
           <p class="lead lh-base text-light"><%=animal.description%></p>
         </div>
-        <!-- end div description -->
+        <!-- end of description card -->
       </div>
 
+      <!-- start of likes & dislikes box -->
       <div class="card col p-2 mb-2 auto main">
         <div class="card-body">
           <h3 class="text-peach">Likes:</h3>
@@ -55,28 +64,43 @@
           <p class="lh-base text-light"><%=animal.dislikes%></p>
         </div>
 
-        <!-- end div likes -->
+        <!-- end of likes & dislikes card -->
       </div>
+
+      <!-- end of row -->
     </div>
+
+    <!-- end of second section -->
   </div>
  
+  <!-- start of delete & edit btn -->
+  <div class="d-flex gap-2 col-6 mx-auto pb-3 justify-content-center">
+
+  <!-- if the logged user === the user that created the post show the delete and edit btn -->
   <% if(user.id == animal.userId){%>
+
+    <!-- start of delete btn -->
   <form
     action="/animal/deleteAnimal/<%=animal.id%>?_method=DELETE"
     method="POST"
     class="col-3"
   >
-    <button class="btn btn-danger btn-sm text-light" type="submit">
+    <button class="btn btn-danger btn-sm text-light " type="submit">
       Delete
     </button>
   </form>
-
-  <button class="btn btn-powder btn-sm text-light" type="submit">
-    <a href="/animal/editPost/<%=animal.id%>" class="col-3">Edit </a>
-  </button>
   
+    <!-- start of btn edit -->
+  <button class="btn btn-minty btn-sm text-light px-4" type="submit">
+    <a href="/animal/editPost/<%=animal.id%>" class="text-decoration-none text-light">Edit </a>
+  </button>
+ 
   <%}%>
-  <!-- end of div container -->
+
+  <!-- end of delete & edit btn -->
+</div>
+
+  <!-- end of div main container -->
 </div>
 
 <%- include('partials/footer') -%>
