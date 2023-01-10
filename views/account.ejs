@@ -34,7 +34,7 @@
         </div>
         
         <div class="card-body text-center">
-          <h5 class="card-title text-peach">Welcome</strong> <%= user.userName %></h5>
+          <h5 class="card-title text-peach">Welcome</strong> <%= user.userName %>!</h5>
           <p class="card-text">
             <ul class="list-unstyled text-light">
             <li><strong>Email</strong>: <%= user.email %></li>
@@ -69,11 +69,11 @@
                 action="/animal/deleteAnimal/<%=post.id%>?_method=DELETE"
                 method="POST"
               >
-                <button class="btn btn-danger btn-sm text-light" type="submit">Delete</button>
+                <button class="btn btn-danger text-light" type="submit"> <i class="bi bi-trash"></i> </button>
               </form>
                <button type="button" class="btn btn-minty btn-sm text-light px-4" type="submit"><a  href="/animal/editPost/<%=post.id%>"
-                  class="text-decoration-none text-powder"
-                >Edit</a></button>
+                  class="text-decoration-none text-light"
+                > <i class="bi bi-pencil"></i> </a></button>
             </div>
           </li>
           <% } %>

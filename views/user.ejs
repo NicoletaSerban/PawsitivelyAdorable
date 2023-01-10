@@ -20,13 +20,21 @@
             <!-- start rate/adorable form -->
             <li><strong>
               <form
-                action="/user/rate/<%= user.id %>?_method=PUT"
+                action="/user/rate/<%=user._id%>?_method=PUT"
                 method="POST"
               >
-              <li>Adorable?<button class="btn" type="submit"> <i class="fas fa-paw"></i>
-              </button>
+            <!-- if the user already clicked Adorable btn the btn will not be display anymore -->
+              <% if (errorRate) { %>
+                <button type="button" class="btn btn-success mb-1" disabled><%=errorRate%> </button>
+                 <% } else { %>
+                  <li>Adorable?<button class="btn" type="submit">
+                  <i class="fas fa-paw"></i>
+                </button>
+                  <% } %>
             </li>
+           
               </form>
+              
               <!-- end rate/adorable form -->
             </li>
             
@@ -36,17 +44,36 @@
                 action="/user/reported/<%= user.id %>?_method=PUT"
                 method="POST"
               >
+              <% if (errorReport) { %>
+                <button type="button" class="btn btn-danger" disabled><%=errorReport%> </button></div>
+                 <% } else { %>
               <li>Report user:<button class="btn" type="submit"> <i class="fas fa-frown"></i>
               </button>
+              <% } %>
             </li>
               </form>
               <!-- end reported form -->
-            </li>
+
+              <!-- appears only if the conditionals are true -->
+          <div class=" d-flex justify-content-center w-auto">
+          <% if (user.reported > 100) { %>
+            <div class="alert alert-danger" role="alert">
+                User has many reports!
+              </div>
+              <% } else if(user.rating > 10){ %> 
+                <div class="alert alert-success" role="alert">
+                  User has many positive votes!
+                </div> 
+                <% } %>
+            </div>
             <!-- end of info -->
           </ul>
         </p>
+        
+        
+          
         <!-- end card body -->
-        </div>
+        
         <!-- end card-->
       </div>
         <!-- end div profile box-->

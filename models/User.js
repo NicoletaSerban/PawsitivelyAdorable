@@ -30,6 +30,22 @@ const UserSchema = new mongoose.Schema({
     type: String,
     require: false,
   },
+
+  // for the adorable function
+  ratedUsers: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
+  ],
+
+  // for the reported function
+  reportedUsers: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
+  ],
 });
 
 // Password hash middleware.

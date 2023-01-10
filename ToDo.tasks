@@ -18,7 +18,7 @@ Created by:
     ✔ Add hyperlink to post createdBy @done (1/4/2023, 2:22:48 PM)
     ✔ Chage the rating from animal to the new page of user @done (1/4/2023, 4:42:53 PM)
 
-    Change review:
+Change review:
     ☐ @critical    
     ✔ Change with reputation @done (1/4/2023, 6:46:25 PM)
     ✔ Icon a paw @done (1/4/2023, 6:46:28 PM)
@@ -33,10 +33,10 @@ Tips & tricks for first time owners:
 
 Add section for pictures from adopters: 
     ☐ @high 
-    ☐ make Model
+    ✔ make Model @done (1/9/2023, 3:54:58 PM)
     ✔ create roputes&controllers @done (1/6/2023, 12:55:39 PM)
-    ☐ create form to put pictures
-    ☐ updates shown as cards  
+    ✔ create form to put pictures @done (1/10/2023, 1:30:30 PM)
+    ✔ updates shown as cards @done (1/10/2023, 1:30:32 PM)
     ☐ How to add multiple pics
 
 
@@ -63,7 +63,19 @@ Other stuff to add:
     ☐ make gif of project @critical 
     ☐ Add new posts @low 
     ☐ How to make desciption shorter in home @critical 
-    ☐ A user cad give only one adorable or just one report
-    ☐ Add comments so the code can be easy to read
+   
+    ✔ Add comments so the code can be easy to read @done (1/9/2023, 3:55:13 PM)
     ✔ Random app in feed @done (1/6/2023, 12:33:40 PM)
+
+Today:
+    ☐ A user can give only one adorable or just one report @critical 
+    ☐ change the DB name @critical 
+    ☐ make a 'Back' btn for edit page
+    ☐ add Readme.md @critical 
+    ☐ Add new posts
+    ☐  host the app @critical
+    ☐ make gif of project @critical
+
+
+
     

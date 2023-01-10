@@ -47,6 +47,9 @@ const AnimalSchema = new mongoose.Schema({
     // referred to User form our models
     ref: "User",
   },
+  specialNeeds: {
+    type: String,
+  },
   location: {
     type: String,
     required: true,

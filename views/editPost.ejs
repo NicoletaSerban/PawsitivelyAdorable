@@ -80,6 +80,19 @@
             >
           </div>
 
+          <div>
+            <label for="specialNeeds" class="form-label text-light pt-3"
+              >Special Needs</label
+            >
+            <textarea
+              class="form-control text-minty"
+              id="specialNeeds"
+              name="specialNeeds"
+            >
+ <%=animal.specialNeeds%></textarea
+            >
+          </div>
+
           <!-- forAdoption input -->
           <div>
             <label
@@ -179,13 +192,19 @@
           </div>
 
           <!-- submit btn -->
-          <div class="pt-3 d-flex justify-content-center">
+          <div class="pt-3 d-flex justify-content-center mb-3">
             <button
               type="submit"
-              class="btn btn-primary text-powder bg-minty fw-semibold"
+              class="btn btn-primary text-light bg-minty fw-semibold"
             >
-              Edit
+              <i class="bi bi-check-lg"></i>
             </button>
+            <a
+              href="/animal/<%=animal.id%>"
+              class="btn btn-primary text-light fw-semibold mx-2 bg-danger"
+            >
+              <i class="bi bi-x-lg"></i>
+            </a>
           </div>
 
           <!-- end of edit form -->
