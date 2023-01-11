@@ -5,14 +5,22 @@ const Animal = require("../models/Animal");
 
 module.exports = {
   getAnimalUpdates: async (req, res) => {
-    const pet = await Pet.find().sort({ takeAwayDate: "desc" });
-    res.render("animalUpdates.ejs", { user: req.user, pet: pet });
+    const pets = await Pet.find().sort({ takeAwayDate: "desc" });
+
+    res.render("animalUpdates.ejs", {
+      user: req.user,
+      pets: pets,
+    });
   },
   getPetUpdates: async (req, res) => {
     try {
       // rendering profile page with the data from the DB
-      const pet = await Pet.find().sort({ takeAwayDate: "desc" });
-      res.render("createAnimalUpdates.ejs", { user: req.user, pet: pet });
+      const pets = await Pet.find().sort({ takeAwayDate: "desc" });
+
+      res.render("createAnimalUpdates.ejs", {
+        user: req.user,
+        pets: pets,
+      });
     } catch (err) {
       console.log(err);
     }

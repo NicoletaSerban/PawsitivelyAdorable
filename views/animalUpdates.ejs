@@ -35,27 +35,31 @@
   <div class="container">
     <div class="row row-cols-1 row-cols-md-3 g-4 pb-2">
       <!-- loop through all the updates and show the posts -->
-      <% for(pets of pet) {%>
+     
+     <%for(pet of pets) {%>
       <div class="col">
         <div class="card text-bg-powder h-60">
-          <img src="<%=pets.image%>" class="card-img-top" alt="..." />
+          <img src="<%=pet.image%>" class="card-img-top" alt="..." />
           <div class="card-body">
-            <h5 class="card-title text-center"><%=pets.name%></h5>
+            <h5 class="card-title text-center"><%=pet.name%></h5>
             <p class="card-text text-light">Brief updates:</p>
             <p>
-              <span><%= pets.updates %></span>
+              <p>
+                <span ><%= pet.updates %></span>
+              </p>
             </p>
+            
 
             <p class="card-text text-light">Struggles:</p>
-            <span><%=pets.struggles%></span>
+            <span><%=pet.struggles%></span>
           </div>
           <div class="card-footer">
             <ul class="list-unstyled">
               <li class="d-inline-block mx-4">
-                <small> Adopted by: <%=pets.adoptedByName%></small>
+                <small> Adopted by: <%=pet.adoptedByName%></small>
               </li>
               <li class="d-inline-block mx-2">
-                <small> On date: <%=pets.takeAwayDate.toLocaleString()%></small>
+                <small> On date: <%=pet.takeAwayDate.toLocaleString()%></small>
               </li>
             </ul>
           </div>
@@ -71,5 +75,6 @@
 
   <!-- end of main container -->
 </div>
+
 
 <%- include('partials/footer') -%>
