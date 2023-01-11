@@ -20,11 +20,12 @@ module.exports = {
     try {
       // finding all the post with the associed id
       const posts = await Animal.find({ userId: req.params.id });
-      const user = await User.findById(req.params.id);
-
+      const userProfile = await User.findById(req.params.id);
+      const user = await User.findById(req.user.id);
       // rendering profile page with the data from the DB
       res.render("user.ejs", {
         posts: posts,
+        userProfile: userProfile,
         user: user,
       });
     } catch (err) {
@@ -33,69 +34,63 @@ module.exports = {
   },
 
   // it add +1 when the paw is clicked and hecks to see if the user has clicked yet the adorable btn
-  putRate: async (req, res) => {
+  putAdorable: async (req, res) => {
     try {
-      //  to see if the user has already rated the other user
-      const currentUser = await User.findOne({ _id: req.user._id });
-
-      // checks if the current user has already rated the user
-      if (currentUser.ratedUsers.includes(req.params.id)) {
-        // if the current user has already rated the other user throws an error that is passed to ejs
-        return res.render("user.ejs", {
-          errorRate: "you already rated this user",
-        });
+      const userBeingAdorable = await User.findById(req.params.id);
+      // check if the user has already given a rating
+      if (userBeingAdorable.ratedUsers.includes(req.user.id)) {
+        return res.status(400).send("You have already given a rating.");
       }
-
-      // adds the id of the user that the current user is trying to rate adn pushes in an Array
-      currentUser.ratedUsers.push(req.params.id);
-
-      // to save the current user's updated ratedUsers array
-      await currentUser.save();
-
-      // increment adorable by +1
+      // increment rating by +1
       await User.findOneAndUpdate(
         { _id: req.params.id },
         {
           $inc: { rating: 1 },
         }
       );
-      console.log("Adorable +1");
+      // add user id to the rated users array
+      await User.findOneAndUpdate(
+        { _id: req.params.id },
+        {
+          $push: { ratedUsers: req.user.id },
+        }
+      );
+      console.log("Rating +1");
       res.redirect(`/user/${req.params.id}`);
     } catch (err) {
       console.log(err);
+      res.status(500).send("Error updating rating.");
     }
   },
 
   // it add +1 when the sad face is clicked and checks to see if the user has clicked yet the reported
   putReported: async (req, res) => {
     try {
-      //  to see if the user has already rated the other user
-      const currentUser = await User.findOne({ _id: req.user._id });
+      const userBeingReported = await User.findById(req.params.id);
 
-      // checks if the current user has already rated the user
-      if (currentUser.reportedUsers.includes(req.params.id)) {
-        // if the current user has already rated the other user throws an error that is passed to ejs
-        return res.render("user.ejs", {
-          errorReport: "You already rated this user",
-        });
+      // check if the user has already given a rating
+      if (userBeingReported.reportedUsers.includes(req.user.id)) {
+        return res.status(400).send("You have already reported this user.");
       }
-
-      // adds the id of the user that the current user is trying to rate adn pushes in an Array
-      currentUser.reportedUsers.push(req.params.id);
-
-      // to save the current user's updated ratedUsers array
-      await currentUser.save();
-
+      // increment rating by +1
       await User.findOneAndUpdate(
         { _id: req.params.id },
         {
-          $inc: { reported: 1 },
+          $inc: { rating: 1 },
         }
       );
-      console.log("Reported +1");
+      // add user id to the rated users array
+      await User.findOneAndUpdate(
+        { _id: req.params.id },
+        {
+          $push: { reportedUsers: req.user.id },
+        }
+      );
+      console.log("Report +1");
       res.redirect(`/user/${req.params.id}`);
     } catch (err) {
       console.log(err);
+      res.status(500).send("Error updating report.");
     }
   },
 };

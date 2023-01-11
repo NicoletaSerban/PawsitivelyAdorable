@@ -13,12 +13,12 @@ router.get("/", homeController.getMain);
 // filter routes for the main page
 router.get("/filter", filterController.getFilter);
 
-// Routes for the user page
+// Routes for the user profile
 
-// get user page
+// get user profile
 router.get("/user/:id", homeController.getUser);
-// rate  user p
-router.put("/user/rate/:id", ensureAuth, homeController.putRate);
+// rate  user profile
+router.put("/user/adorable/:id", ensureAuth, homeController.putAdorable);
 // report  user
 router.put("/user/reported/:id", ensureAuth, homeController.putReported);
 

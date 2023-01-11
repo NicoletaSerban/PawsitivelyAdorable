@@ -9,46 +9,47 @@
         </div>
         
         <div class="card-body text-center">
-          <h5 class="card-title text-peach"></strong> <%= user.userName %>'s profile</h5>
+          <h5 class="card-title text-peach"></strong> <%= userProfile.userName %>'s profile</h5>
           <p class="card-text">
             <ul class="list-unstyled text-light">
-            <li><strong>Email</strong>: <%= user.email %></li>
-            <li><strong>Role</strong>: <%= user.role %></li>
-            <li><strong>Adorable</strong>: <%= user.rating %></li>
-            <li><strong>Reported</strong>: <%= user.reported %></li>
+            <li><strong>Email</strong>: <%= userProfile.email %></li>
+            <li><strong>Role</strong>: <%= userProfile.role %></li>
+            <li><strong>Adorable</strong>: <%= userProfile.rating %></li>
+            <li><strong>Reported</strong>: <%= userProfile.reported %></li>
 
-            <!-- start rate/adorable form -->
-            <li><strong>
-              <form
-                action="/user/rate/<%=user._id%>?_method=PUT"
-                method="POST"
-              >
-            <!-- if the user already clicked Adorable btn the btn will not be display anymore -->
-              <% if (errorRate) { %>
-                <button type="button" class="btn btn-success mb-1" disabled><%=errorRate%> </button>
-                 <% } else { %>
-                  <li>Adorable?<button class="btn" type="submit">
+            <!-- start adorable section -->
+            <li>Adorable?
+              <% if (userProfile.ratedUsers.includes(user.id) || userProfile.id == user.id) { %>
+                <button class="btn" type="submit" disabled>
                   <i class="fas fa-paw"></i>
                 </button>
-                  <% } %>
-            </li>
-           
-              </form>
-              
-              <!-- end rate/adorable form -->
+                <p>You have already given an <i class="fas fa-paw"></i> or you can not <i class="fas fa-paw"></i> yourself!</p>
+              <% } else { %>
+                <form action="/user/adorable/<%=userProfile._id%>?_method=PUT" method="POST">
+                  <button class="btn" type="submit">
+                    <i class="fas fa-paw"></i>
+                  </button>
+                </form>
+              <% } %>
             </li>
             
-            <!-- start reported form -->
-            <li><strong>
-              <form
-                action="/user/reported/<%= user.id %>?_method=PUT"
+            
+            <!-- start reported section -->
+              <li>Report user:
+              <% if (userProfile.reportedUsers.includes(user.id) || userProfile.id == user.id) { %>
+                <button class="btn" type="submit" disabled>
+                  <i class="fas fa-frown"></i>
+                </button>
+                <p>You have already given an <i class="fas fa-frown"></i> or you can not <i class="fas fa-frown"></i> yourself!</p>
+              <% } else { %>
+                <form
+                action="/user/reported/<%= userProfile.id %>?_method=PUT"
                 method="POST"
               >
-              <% if (errorReport) { %>
-                <button type="button" class="btn btn-danger" disabled><%=errorReport%> </button></div>
-                 <% } else { %>
-              <li>Report user:<button class="btn" type="submit"> <i class="fas fa-frown"></i>
-              </button>
+                  <button class="btn" type="submit">
+                    <i class="fas fa-frown"></i>
+                  </button>
+                </form>
               <% } %>
             </li>
               </form>
@@ -56,11 +57,11 @@
 
               <!-- appears only if the conditionals are true -->
           <div class=" d-flex justify-content-center w-auto">
-          <% if (user.reported > 100) { %>
+          <% if (userProfile.reported > 100) { %>
             <div class="alert alert-danger" role="alert">
                 User has many reports!
               </div>
-              <% } else if(user.rating > 10){ %> 
+              <% } else if(userProfile.rating > 10){ %> 
                 <div class="alert alert-success" role="alert">
                   User has many positive votes!
                 </div> 
@@ -80,7 +81,7 @@
     </div>
 
     <!-- user posts starts -->
-      <h2 class="text-center pt-4 text-powder"><%=user.userName%>'s posts</h2>
+      <h2 class="text-center pt-4 text-powder"><%=userProfile.userName%>'s posts</h2>
       <div class="col-5 section-bg">
         <ul class="row list-unstyled text-center" >
           <!-- display all the posts from the user -->
