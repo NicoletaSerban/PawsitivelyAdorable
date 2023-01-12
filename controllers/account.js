@@ -1,6 +1,5 @@
 const cloudinary = require("../middleware/cloudinary");
 const Animal = require("../models/Animal");
-
 const Review = require("../models/Review");
 
 module.exports = {
@@ -27,7 +26,7 @@ module.exports = {
     try {
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path, {
-        folder: "adopt-me",
+        folder: "pawsitivelyAdorable",
       });
 
       // create a new post in Db using our post model

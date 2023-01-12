@@ -21,9 +21,13 @@ Install PawsitivelyAdorable with npm
 
 **Backend:** Node.js server with Express.js, written using the MVC architecture and MongoDB for database
 
-**Frontend:** Used ejs, Boostrap
+**Frontend:** Used ejs, Bootstrap
 
-Here's where you can go to town on how you actually built this thing. Write as much as you can here, it's totally fine if it's not too much just make sure you write _something_. If you don't have too much experience on your resume working on the front end that's totally fine. This is where you can really show off your passion and make up for that ten fold.
+I built PawsitivelyAdorable using a combination of frontend technologies such as HTML, CSS, JavaScript and Bootstrap, together with EJS as the template engine. On the backend, I used Node.js and Express.js to create a server, and followed the MVC architecture to organize the code. To store and retrieve data, I used MongoDB. To handle images, I used Cloudinary, a cloud-based image and video management platform, and multer, a middleware for handling file uploads. This helped me to create a fast, efficient and visually appealing website that meets the needs of its users.
+
+I followed the MVC architecture to organize the code, and used Cloudinary and Multer to handle image uploads and processing. This helped me to create a website that's efficient, responsive and easy to maintain, and improves the overall performance and scalability of the website.
+
+Overall, I believe that my choice of technologies helped me to create a fast, efficient, and visually appealing website that meets the needs of its users.
 
 ## Optimizations
 
@@ -33,7 +37,7 @@ You don't have to include this section but interviewers _love_ that you can not 
 
 ## Lessons Learned:
 
-No matter what your experience level, being an engineer means continuously learning. Every time you build something you always have those _whoa this is awesome_ or _fuck yeah I did it!_ moments. This is where you should share those moments! Recruiters and interviewers love to see that you're self-aware and passionate about growing.
+Building PawsitivelyAdorable taught me several valuable lessons. One of the most important ones was the importance of proper organization and planning. By following the MVC architecture, I was able to keep the codebase organized and make it easier to maintain and scale in the future. Another important lesson was the benefits of using cloud services, by using Cloudinary I was able to reduce the load on the server and improve the website's scalability. Additionally, I learned the importance of testing and debugging, by testing the website and debugging any issues that arose, I was able to ensure that PawsitivelyAdorable functioned as intended and provided a smooth user experience. Choosing the right tools for the job was also crucial, by selecting the appropriate technologies and libraries, I was able to create a website that was both efficient and visually appealing. Security was also a important aspect of the project, I had to take extra steps to ensure that the website was secure and protected against malicious attacks. Lastly, I learned the importance of user experience, by focusing on the user experience and making sure that the website was easy to navigate, I was able to create a website that was both functional and enjoyable to use.
 
 ## Demo
 
@@ -55,7 +59,7 @@ To run this project, you will need to add the following environment variables to
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://i.ibb.co/kQkB20c/Untitled-collage-copy.png)
 
 ## Run Locally
 

@@ -79,21 +79,23 @@
   <!-- if the logged user === the user that created the post show the delete and edit btn -->
   <% if(user.id == animal.userId){%>
 
+    <!-- start of btn edit -->
+  <button class="btn btn-minty btn-sm text-light px-4" type="submit" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
+    <a href="/animal/editPost/<%=animal.id%>" class="text-decoration-none text-light"><i class="bi bi-pencil"></i> </a>
+  </button>
+
     <!-- start of delete btn -->
   <form
     action="/animal/deleteAnimal/<%=animal.id%>?_method=DELETE"
     method="POST"
     class="col-3"
   >
-    <button class="btn btn-danger btn-sm text-light " type="submit">
-      Delete
+    <button class="btn btn-danger btn-sm text-light px-4" type="submit" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
+      <i class="bi bi-trash"></i>
     </button>
   </form>
   
-    <!-- start of btn edit -->
-  <button class="btn btn-minty btn-sm text-light px-4" type="submit">
-    <a href="/animal/editPost/<%=animal.id%>" class="text-decoration-none text-light">Edit </a>
-  </button>
+    
  
   <%}%>
 

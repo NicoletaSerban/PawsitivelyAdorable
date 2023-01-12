@@ -24,4 +24,13 @@ router.post(
   animalUpdatesController.createPetUpdates
 );
 
+// Edit&Delete Updates
+router.delete("/deleteUpdates/:id", animalUpdatesController.deleteUpdates);
+router.get(
+  "/editUpdates/:id",
+  ensureAuth,
+  animalUpdatesController.getEditUpdates
+);
+router.put("/editUpdates/:id", animalUpdatesController.editUpdates);
+
 module.exports = router;

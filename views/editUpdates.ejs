@@ -1,0 +1,99 @@
+<%- include('partials/header') -%>
+<div class="container mx-auto main" style="width: 500px">
+  <div class="row">
+    <h2 class="text-peach pt-3 text-center">Edit Updates</h2>
+
+    <!--start of update form  -->
+    <form
+      action="/animalUpdates/editUpdates/<%=pets.id%>?_method=PUT"
+      method="POST"
+    >
+      <!-- name input -->
+      <div class="mb-3 form-group">
+        <label for="name" class="form-label text-light">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          value="<%=pets.name%>"
+        />
+      </div>
+
+      <!-- updates input -->
+      <div class="form-group">
+        <label for="updates" class="form-label text-light">Updates</label>
+        <textarea class="form-control text-minty" id="updates" name="updates">
+<%=pets.updates%></textarea
+        >
+      </div>
+
+      <!-- struggles input -->
+      <div class="mb-3">
+        <label for="struggles" class="form-label text-light pt-3"
+          >Struggles</label
+        >
+        <textarea
+          class="form-control text-minty"
+          id="struggles"
+          name="struggles"
+        >
+<%=pets.struggles%></textarea
+        >
+      </div>
+
+      <!-- adopted by input -->
+      <div class="mb-3 form-group">
+        <label for="adoptedByName" class="form-label text-light"
+          >Adopted by:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="adoptedByName"
+          name="adoptedByName"
+          value="<%=pets.adoptedByName%>"
+        />
+      </div>
+
+      <!-- adopted date input -->
+      <div class="mb-3 form-group">
+        <label for="takeAwayDate" class="form-label text-light"
+          >Adopted date:</label
+        >
+        <input
+          type="date"
+          class="form-control"
+          id="takeAwayDate"
+          name="takeAwayDate"
+          value="<%=pets.takeAwayDate%>"
+        />
+      </div>
+
+      <!-- submit btn -->
+      <div class="pt-3 d-flex justify-content-center mb-3">
+        <button
+          type="submit"
+          class="btn btn-primary text-powder bg-minty fw-semibold"
+        >
+          <i class="bi bi-check-lg"></i>
+        </button>
+        <!-- back btn -->
+        <a
+          href="/animalUpdates"
+          class="btn btn-primary text-light fw-semibold mx-2 bg-danger"
+        >
+          <i class="bi bi-x-lg"></i>
+        </a>
+      </div>
+
+      <!-- end of update form -->
+    </form>
+
+    <!-- end div row -->
+  </div>
+
+  <!-- end of container main -->
+</div>
+
+<%- include('partials/footer') -%>

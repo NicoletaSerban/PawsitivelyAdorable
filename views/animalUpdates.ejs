@@ -36,8 +36,7 @@
     <div class="row row-cols-1 row-cols-md-3 g-4 pb-2">
       <!-- loop through all the updates and show the posts -->
       <!-- to give an identifier for each post so the accordion triggers only one update per time -->
-      <% let counter = 1 %> 
-      <%for(pet of pets) {%>
+      <% let counter = 1 %> <%for(pet of pets) {%>
       <div class="col">
         <div class="card text-bg-powder h-60">
           <img src="<%=pet.image%>" class="card-img-top" alt="image of a pet" />
@@ -45,44 +44,102 @@
             <h5 class="card-title text-center"><%=pet.name%></h5>
 
             <!-- Start of accordion -->
-            <div class="accordion " id="accordionExample">
+            <div class="accordion" id="accordionExample">
               <!-- first item -->
-              <div class="accordion-item text-bg-lightPowder ">
+              <div class="accordion-item text-bg-lightPowder">
                 <h2 class="accordion-header" id="headingOne<%=counter%>">
-                  <button class="accordion-button collapsed text-bg-lightPowder fw-bold text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne<%=counter%>" aria-expanded="true" aria-controls="collapseOne<%=counter%>">
+                  <button
+                    class="accordion-button collapsed text-bg-lightPowder fw-bold text-light"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne<%=counter%>"
+                    aria-expanded="true"
+                    aria-controls="collapseOne<%=counter%>"
+                  >
                     Updates
                   </button>
                 </h2>
-                <div id="collapseOne<%=counter%>" class="accordion-collapse collapse" aria-labelledby="headingOne<%=counter%>" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <%=pet.updates%>
-                  </div>
+                <div
+                  id="collapseOne<%=counter%>"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingOne<%=counter%>"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body"><%=pet.updates%></div>
                 </div>
                 <!-- end of first item -->
               </div>
               <!-- second item -->
               <div class="accordion-item text-bg-lightPowder">
                 <h2 class="accordion-header" id="headingTwo<%=counter%>">
-                  <button class="accordion-button collapsed text-bg-lightPowder fw-bold text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo<%=counter%>" aria-expanded="false" aria-controls="collapseTwo<%=counter%>">
+                  <button
+                    class="accordion-button collapsed text-bg-lightPowder fw-bold text-light"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo<%=counter%>"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo<%=counter%>"
+                  >
                     Struggles
                   </button>
                 </h2>
-                <div id="collapseTwo<%=counter%>" class="accordion-collapse collapse" aria-labelledby="headingTwo<%=counter%>" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <%=pet.struggles%>
-                  </div>
+                <div
+                  id="collapseTwo<%=counter%>"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingTwo<%=counter%>"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body"><%=pet.struggles%></div>
                 </div>
                 <!-- end of second item -->
               </div>
-              
+
               <!-- Edit&Delete btn -->
-                </div>
+              <!-- start of delete & edit btn -->
+              <div
+                class="d-flex gap-4 col-6 mx-auto p-2 justify-content-center"
+              >
+                <!-- if the logged user === the user that created the post show the delete and edit btn -->
+                <% if(user.id == pet.userId){%>
+
+                  <!-- start of btn edit -->
+                <button
+                class="btn btn-minty btn-sm text-light px-4"
+                type="submit" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"
+              >
+                <a
+                  href="/animalUpdates/editUpdates/<%=pet.id%>"
+                  class="text-decoration-none text-light"
+                  ><i class="bi bi-pencil"></i>
+                </a>
+              </button>
+
+                <!-- start of delete btn -->
+                <form
+                  action="/animalUpdates/deleteUpdates/<%=pet.id%>?_method=DELETE"
+                  method="POST"
+                  class="col-3"
+                >
+                  <button
+                    class="btn btn-danger btn-sm text-light px-4"
+                    type="submit" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"
+                  >
+                  <i class="bi bi-trash"></i>
+                  </button>
+                </form>
+                <%}%>
+                <!-- end of btn -->
+              </div>
               <!-- end of accordion -->
+          </div>
+              <!-- end of div card body -->
             </div>
             <div class="card-footer">
               <ul class="list-unstyled">
                 <li class="d-inline-block mx-4">
-                  <small> Adopted by: <strong><%=pet.adoptedByName%></strong></small>
+                  <small>
+                    Adopted by: <strong><%=pet.adoptedByName%></strong></small
+                  >
                 </li>
                 <li class="d-inline-block mx-2">
                   <small>
@@ -91,7 +148,7 @@
                 </li>
               </ul>
             </div>
-            <!-- end of card body -->
+            <!-- end of card -->
           </div>
         </div>
         <% counter++ %> <% } %>

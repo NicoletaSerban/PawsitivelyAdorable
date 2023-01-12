@@ -29,7 +29,7 @@ module.exports = {
     try {
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path, {
-        folder: "adopt-me",
+        folder: "pawsitivelyAdorableUpdates",
       });
 
       // create a new post in Db using our post model
@@ -47,6 +47,56 @@ module.exports = {
       res.redirect("/animalUpdates");
     } catch (err) {
       console.log(err);
+    }
+  },
+  getEditUpdates: async (req, res) => {
+    const pets = await Pet.findById(req.params.id);
+
+    try {
+      // rendering profile page with the data from the DB
+      res.render("editUpdates.ejs", { user: req.user, pets: pets });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  editUpdates: async (req, res) => {
+    //iterate to see if the body is empty or not
+    Object.keys(req.body).forEach((key) => {
+      if (
+        req.body[key] == null ||
+        req.body[key] == undefined ||
+        req.body[key] == ""
+      ) {
+        delete req.body[key];
+      }
+    });
+    try {
+      await Pet.findOneAndUpdate(
+        { _id: req.params.id },
+        {
+          $set: req.body,
+        }
+      );
+      console.log("Update edited");
+      res.redirect(`/animalUpdates`);
+    } catch (err) {
+      console.log(err);
+    }
+  },
+
+  deleteUpdates: async (req, res) => {
+    try {
+      let petUpdate = await Pet.findById({ _id: req.params.id });
+
+      // delete img from cloudinary
+      await cloudinary.uploader.destroy(petUpdate.cloudinaryId);
+
+      // Delete post from db
+      await petUpdate.remove({ _id: req.params.id });
+      console.log("Deleted Animal Update");
+      res.redirect("/animalUpdates");
+    } catch (err) {
+      res.redirect("/animalUpdates");
     }
   },
 };

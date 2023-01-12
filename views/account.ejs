@@ -65,15 +65,19 @@
               </ul>
             </a>
             <div class="d-flex justify-content-between">
+              <!-- edit btn -->
+              <button type="button" class="btn btn-minty btn-sm text-light px-4" type="submit" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><a  href="/animal/editPost/<%=post.id%>"
+                class="text-decoration-none text-light"
+              > <i class="bi bi-pencil"></i> </a></button>
+
+              <!-- delete btn -->
               <form
                 action="/animal/deleteAnimal/<%=post.id%>?_method=DELETE"
                 method="POST"
               >
-                <button class="btn btn-danger text-light" type="submit"> <i class="bi bi-trash"></i> </button>
+                <button class="btn btn-danger text-light px-4" type="submit" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"> <i class="bi bi-trash"></i> </button>
               </form>
-               <button type="button" class="btn btn-minty btn-sm text-light px-4" type="submit"><a  href="/animal/editPost/<%=post.id%>"
-                  class="text-decoration-none text-light"
-                > <i class="bi bi-pencil"></i> </a></button>
+              
             </div>
           </li>
           <% } %>
