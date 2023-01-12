@@ -8,11 +8,11 @@ Pawsitively Adorable in an app for animal lovers looking to adopt or foster anim
 
 ## Installation
 
-Install my-project with npm
+Install PawsitivelyAdorable with npm
 
 ```bash
   npm install PawsitivelyAdorable
-  cd my-project
+
 ```
 
 ## How It's Made:
@@ -47,9 +47,11 @@ Insert gif or link to demo
 
 To run this project, you will need to add the following environment variables to your .env file
 
+`PORT = 2929`
+
 `API_KEY`
 
-`ANOTHER_API_KEY`
+`API_SECRET`
 
 ## Screenshots
 
@@ -60,13 +62,7 @@ To run this project, you will need to add the following environment variables to
 Clone the project
 
 ```bash
-  git clone https://link-to-project
-```
-
-Go to the project directory
-
-```bash
-  cd my-project
+  git clone https://PawsitivelyAdorable
 ```
 
 Install dependencies
@@ -93,6 +89,6 @@ Take a look at these couple examples that I have in my own portfolio:
 
 ## 🔗 Links
 
-[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://katherineoelsner.com/)
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/)
-[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/)
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://nicoleta-serban.netlify.app/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nicoletaserban/)
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/NicoS915)

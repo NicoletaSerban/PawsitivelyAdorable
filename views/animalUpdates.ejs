@@ -35,46 +35,75 @@
   <div class="container">
     <div class="row row-cols-1 row-cols-md-3 g-4 pb-2">
       <!-- loop through all the updates and show the posts -->
-     
-     <%for(pet of pets) {%>
+      <!-- to give an identifier for each post so the accordion triggers only one update per time -->
+      <% let counter = 1 %> 
+      <%for(pet of pets) {%>
       <div class="col">
         <div class="card text-bg-powder h-60">
-          <img src="<%=pet.image%>" class="card-img-top" alt="..." />
+          <img src="<%=pet.image%>" class="card-img-top" alt="image of a pet" />
           <div class="card-body">
             <h5 class="card-title text-center"><%=pet.name%></h5>
-            <p class="card-text text-light">Brief updates:</p>
-            <p>
-              <p>
-                <span ><%= pet.updates %></span>
-              </p>
-            </p>
-            
 
-            <p class="card-text text-light">Struggles:</p>
-            <span><%=pet.struggles%></span>
-          </div>
-          <div class="card-footer">
-            <ul class="list-unstyled">
-              <li class="d-inline-block mx-4">
-                <small> Adopted by: <%=pet.adoptedByName%></small>
-              </li>
-              <li class="d-inline-block mx-2">
-                <small> On date: <%=pet.takeAwayDate.toLocaleString()%></small>
-              </li>
-            </ul>
+            <!-- Start of accordion -->
+            <div class="accordion " id="accordionExample">
+              <!-- first item -->
+              <div class="accordion-item text-bg-lightPowder ">
+                <h2 class="accordion-header" id="headingOne<%=counter%>">
+                  <button class="accordion-button collapsed text-bg-lightPowder fw-bold text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne<%=counter%>" aria-expanded="true" aria-controls="collapseOne<%=counter%>">
+                    Updates
+                  </button>
+                </h2>
+                <div id="collapseOne<%=counter%>" class="accordion-collapse collapse" aria-labelledby="headingOne<%=counter%>" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <%=pet.updates%>
+                  </div>
+                </div>
+                <!-- end of first item -->
+              </div>
+              <!-- second item -->
+              <div class="accordion-item text-bg-lightPowder">
+                <h2 class="accordion-header" id="headingTwo<%=counter%>">
+                  <button class="accordion-button collapsed text-bg-lightPowder fw-bold text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo<%=counter%>" aria-expanded="false" aria-controls="collapseTwo<%=counter%>">
+                    Struggles
+                  </button>
+                </h2>
+                <div id="collapseTwo<%=counter%>" class="accordion-collapse collapse" aria-labelledby="headingTwo<%=counter%>" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <%=pet.struggles%>
+                  </div>
+                </div>
+                <!-- end of second item -->
+              </div>
+              
+              <!-- Edit&Delete btn -->
+                </div>
+              <!-- end of accordion -->
+            </div>
+            <div class="card-footer">
+              <ul class="list-unstyled">
+                <li class="d-inline-block mx-4">
+                  <small> Adopted by: <strong><%=pet.adoptedByName%></strong></small>
+                </li>
+                <li class="d-inline-block mx-2">
+                  <small>
+                    On date: <%=pet.takeAwayDate.toLocaleString()%></small
+                  >
+                </li>
+              </ul>
+            </div>
+            <!-- end of card body -->
           </div>
         </div>
-      </div>
-      <% } %>
+        <% counter++ %> <% } %>
 
-      <!-- end of posts rows -->
+        <!-- end of posts col -->
+      </div>
+
+      <!-- end of posts -->
     </div>
 
-    <!-- end of posts -->
+    <!-- end of main container -->
   </div>
 
-  <!-- end of main container -->
+  <%- include('partials/footer') -%>
 </div>
-
-
-<%- include('partials/footer') -%>

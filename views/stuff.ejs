@@ -1,35 +1,55 @@
-<li><strong>
-    <form
-      action="/user/rate/<%=user._id%>?_method=PUT"
-      method="POST"
-    >
-  <!-- if the user already clicked Adorable btn the btn will not be display anymore -->
-    <% if (errorRate) { %>
-      <button type="button" class="btn btn-success mb-1" disabled><%=errorRate%> </button>
-       <% } else { %>
-        <li>Adorable?<button class="btn" type="submit">
-        <i class="fas fa-paw"></i>
-      </button>
-        <% } %>
-  </li>
- 
-    </form>
-    
-    <!-- end rate/adorable form -->
-  </li>
-  
-  <!-- start reported form -->
-  <li><strong>
-    <form
-      action="/user/reported/<%= user.id %>?_method=PUT"
-      method="POST"
-    >
-    <% if (errorReport) { %>
-      <button type="button" class="btn btn-danger" disabled><%=errorReport%> </button></div>
-       <% } else { %>
-    <li>Report user:<button class="btn" type="submit"> <i class="fas fa-frown"></i>
-    </button>
-    <% } %>
-  </li>
-    </form>
-    <!-- end reported form -->
+<script>
+  // For 'Read More' & 'See Less' button from animalUpdates Page
+  var readMoreButtons = document.querySelectorAll(".read-more");
+
+  // Add a click event listener to each button
+  for (var i = 0; i < readMoreButtons.length; i++) {
+    readMoreButtons[i].addEventListener("click", function (e) {
+      // used to prevent the default behavior of an event from happening
+      e.preventDefault();
+
+      // from taking each id
+      var id = this.getAttribute("data-id");
+      var updatesElement = document.getElementById("updates-" + id);
+      var seeLessButton = document.querySelector(
+        ".see-less[data-id='" + id + "']"
+      );
+      var readMoreButton = document.querySelector(
+        ".read-more[data-id='" + id + "']"
+      );
+
+      // toggle the visibility of the full text and buttons
+      if (updatesElement.style.display === "none") {
+        updatesElement.style.display = "block";
+        seeLessButton.style.display = "block";
+        readMoreButton.style.display = "none";
+      } else {
+        updatesElement.style.display = "none";
+        seeLessButton.style.display = "none";
+        readMoreButton.style.display = "block";
+      }
+    });
+  }
+
+  //  to return to the initial state after pressing "See Less"
+  var seeLessButtons = document.querySelectorAll(".see-less");
+
+  for (var i = 0; i < seeLessButtons.length; i++) {
+    seeLessButtons[i].addEventListener("click", function (e) {
+      e.preventDefault();
+      var id = this.getAttribute("data-id");
+      var updatesElement = document.getElementById("updates-" + id);
+      updatesElement.style.display = "none";
+      location.reload();
+    });
+  }
+</script>
+
+<!-- ejs -->
+<p>
+  <p id="updates-<%= pet.id %>" class="card-text text-light" style="display:none;">
+    <span ><%= pet.updates %></span>
+  </p>
+  <a href="#" class="btn btn-primary read-more" data-id="<%= pet.id %>">Read More</a>
+  <a href="#" class="btn btn-secondary see-less" data-id="<%= pet.id %>" style="display:none;">See less</a>
+</p>
