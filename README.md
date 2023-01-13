@@ -4,17 +4,6 @@ Pawsitively Adorable in an app for animal lovers looking to adopt or foster anim
 
 **Link to project:** https://pawsitively.onrender.com/
 
-<!-- ![alt tag](http://placecorgi.com/1200/650) -->
-
-## Installation
-
-Install PawsitivelyAdorable with npm
-
-```bash
-  npm install PawsitivelyAdorable
-
-```
-
 ## How It's Made:
 
 **Tech used:** HTML, CSS, JavaScript, Node.js, EJS, Express, Boostrap, SCSS
@@ -30,10 +19,6 @@ I followed the MVC architecture to organize the code, and used Cloudinary and Mu
 Overall, I believe that my choice of technologies helped me to create a fast, efficient, and visually appealing website that meets the needs of its users.
 
 ## Optimizations
-
-_(optional)_
-
-You don't have to include this section but interviewers _love_ that you can not only deliver a final product that looks great but also functions efficiently. Did you write something then refactor it later and the result was 5x faster than the original implementation? Did you cache your assets? Things that you write in this section are **GREAT** to bring up in interviews and you can use this section as reference when studying for technical interviews!
 
 ## Lessons Learned:
 
@@ -57,39 +42,13 @@ To run this project, you will need to add the following environment variables to
 
 `API_SECRET`
 
+`DB_STRING`
+
+`CLOUD_NAME`
+
 ## Screenshots
 
 ![App Screenshot](https://i.ibb.co/kQkB20c/Untitled-collage-copy.png)
-
-## Run Locally
-
-Clone the project
-
-```bash
-  git clone https://PawsitivelyAdorable
-```
-
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the server
-
-```bash
-  npm run start
-```
-
-## Examples:
-
-Take a look at these couple examples that I have in my own portfolio:
-
-**Palettable:** https://github.com/alecortega/palettable
-
-**Twitter Battle:** https://github.com/alecortega/twitter-battle
-
-**Patch Panel:** https://github.com/alecortega/patch-panel
 
 ## 🔗 Links
 
