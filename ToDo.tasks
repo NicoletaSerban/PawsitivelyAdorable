@@ -62,6 +62,10 @@ Other stuff to add:
     ☐ host the app @critical 
     ☐ make gif of project @critical 
     ☐ Add new posts @low 
+    ☐ Put in Portofolio
+    ☐ Check for SEO
+    ✔ Add to optimization Section with food that animals are allow to eat made with my own API @done (1/13/2023, 1:09:48 PM)
+    ✔ Optimization lazy loading @done (1/13/2023, 1:08:57 PM)
     ✔ How to make desciption shorter in home @critical @done (1/13/2023, 12:25:22 PM)
    
     ✔ Add comments so the code can be easy to read @done (1/9/2023, 3:55:13 PM)
@@ -78,7 +82,18 @@ Today:
     ✔ Make accordion for Updates & Struggles @high @done (1/12/2023, 4:24:37 PM)
     ✔ Add edit & delete btn @critical @done (1/12/2023, 5:33:22 PM)
 
+Performance impromevents:
+    ✔ adding 'alt' to all images @done (1/13/2023, 1:42:51 PM)
+    ☐ Low-contrast text is difficult or impossible for many users to read.
+    ☐ Set an explicit width and height on image elements to reduce layout shifts and improve CLS
+    ✔ meta description @done (1/13/2023, 1:36:24 PM)
+    ☐ configured for a custom splash screenFailures: No manifest was fetched.
 
+
+Phone impromevents:
+    ☐  add scrset to the pic
+    ☐ Consider lazy-loading offscreen and hidden images after all critical resources have finished loading to lower time to interactive
+    ✔ add explicit width and height to the pics @done (1/13/2023, 1:42:58 PM)
 
 
     

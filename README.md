@@ -34,7 +34,11 @@ Overall, I believe that my choice of technologies helped me to create a fast, ef
 
 - Create a chat box where you can give and recive information in real-time.
 
-- Adding new improvements usin React
+- Adding new improvements using React
+
+- Adding the feature 'lazy loding' for multiple posts
+
+- Adding a new section where the users cand verify if a specific food is safe for theier pets, using my own API
 
 ## Lessons Learned:
 

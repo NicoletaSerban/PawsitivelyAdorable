@@ -4,8 +4,8 @@
    <!-- start profile box -->
     <div class="col-7 mx-auto pt-5">
       <div class="card pt-5" style="background-image:url(/imgs/back2.png)" >
-        <div class="card-img-top row" alt="...">
-          <img class="rounded d-block img-fluid " id="avatar" src="https://avatars.dicebear.com/api/big-smile/:seed.png" >
+        <div class="card-img-top row">
+          <img class="rounded d-block img-fluid " id="avatar" src="https://avatars.dicebear.com/api/big-smile/:seed.png" width="100%" height="auto" alt="profile photo" >
         </div>
         
         <div class="card-body text-center">
@@ -88,7 +88,7 @@
           <% for(post of posts) {%>
           <div class="col-6 justify-content-between mt-5">
             <a href="/animal/<%=post._id%>" class="text-decoration-none">
-              <img class="img-fluid" src="<%=post.image%>" />
+              <img class="img-fluid" src="<%=post.image%>" width="100%" height="auto" alt="photo of a pet" />
               <ul class="list-unstyled link-secondary text-light">
                 <li><strong>Name</strong>: <%= post.name %></li>
                 <li><strong>Posted on</strong>: <%= post.postDate.toLocaleString() %></li>
