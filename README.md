@@ -47,7 +47,11 @@ Building PawsitivelyAdorable taught me several valuable lessons. One of the most
 ## Demo
 
 
-![Alt Text](https://i.ibb.co/VLK50pr/agf.gif)
+![Alt Text]()
+
+<div align="center">
+<img src="https://i.ibb.co/VLK50pr/agf.gif" align="center" style="width: 100%" />
+</div>
   
 
 ## Badges
