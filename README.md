@@ -50,7 +50,7 @@ Building PawsitivelyAdorable taught me several valuable lessons. One of the most
 ![Alt Text]()
 
 <div align="center">
-<img src="https://i.ibb.co/VLK50pr/agf.gif" align="center" style="width: 100%" />
+<img src="https://i.imgur.com/FvdX7jC.gif" align="center" style="width: 100%" />
 </div>
   
 
