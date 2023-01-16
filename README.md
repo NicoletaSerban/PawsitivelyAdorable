@@ -47,7 +47,7 @@ Building PawsitivelyAdorable taught me several valuable lessons. One of the most
 ## Demo
 
 <div align="center">
-<video src="https://i.imgur.com/ypaNg1h.mp4" width="320" height="200" controls preload></video>
+![Alt Text]([https://i.imgur.com/example.gif](https://i.imgur.com/ypaNg1h.gif))
 </div>  
 
 ## Badges
