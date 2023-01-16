@@ -46,9 +46,6 @@ Building PawsitivelyAdorable taught me several valuable lessons. One of the most
 
 ## Demo
 
-
-![Alt Text]()
-
 <div align="center">
 <img src="https://i.imgur.com/FvdX7jC.gif" align="center" style="width: 100%" />
 </div>
