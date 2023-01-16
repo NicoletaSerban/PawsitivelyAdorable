@@ -47,7 +47,7 @@ Building PawsitivelyAdorable taught me several valuable lessons. One of the most
 ## Demo
 
 
-![Alt Text](https://i.imgur.com/example.gif)
+![Alt Text](https://i.imgur.com/ypaNg1h.gif)
   
 
 ## Badges
