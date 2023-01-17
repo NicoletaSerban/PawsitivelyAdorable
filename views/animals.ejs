@@ -11,12 +11,12 @@
       <div class="d-flex gap-2 col-6 mx-auto pb-3">
         <!-- to appear only btn that has "Yes"  -->
         <% if(animal.forAdoption === 'Yes'){ %>
-        <button type="button" class="btn-sm btn btn-info text-light">
+        <button type="button" class="btn-sm btn btn-info text-light" disabled>
           Adopt me
         </button>
 
         <% } %> <% if(animal.forFoster === 'Yes'){ %>
-        <button type="button" class="btn-sm btn btn-info text-light">
+        <button type="button" class="btn-sm btn btn-info text-light" disabled>
           Foster me
         </button>
         <% } %>
