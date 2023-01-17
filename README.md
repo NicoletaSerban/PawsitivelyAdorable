@@ -48,7 +48,7 @@ Building PawsitivelyAdorable taught me several valuable lessons. One of the most
 
 
 
-  ![chrome_hNV63Bd1wY](https://user-images.githubusercontent.com/102362172/212697513-41200ee5-1b6e-452c-98d9-4b96397a4f8a.gif)
+ ![Demo GIF](https://i.imgur.com/YUHmq7W.gif)
 
 
 ## Badges
