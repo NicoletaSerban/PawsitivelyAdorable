@@ -6,7 +6,7 @@ Pawsitively Adorable in an app for animal lovers looking to adopt or foster anim
 
 ## How It's Made:
 
-**Tech used:** HTML, CSS, JavaScript, Node.js, EJS, Express, Boostrap, SCSS
+**Tech used:** HTML, CSS, JavaScript, Node.js, EJS, Express, Bootstrap, SCSS
 
 **Backend:** Node.js server with Express.js, written using the MVC architecture and MongoDB for database
 
